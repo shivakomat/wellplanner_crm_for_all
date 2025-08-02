@@ -13,31 +13,60 @@
             </div>
         </div>
 
-        <div class="row" data-ng-show="controller.isLoaded">
-@*            <div class="col-md-4 p-2">*@
-@*                <div class="card card-plain text-center">*@
-@*                    <div class="card-body">*@
-@*                        <h4 class="card-title">Create New Project</h4>*@
-@*                        <button class="btn btn-lg btn-warning"  data-toggle="modal" data-target="#newProject">*@
-@*                            <i class="nc-icon nc-simple-add"></i>*@
-@*                        </button>*@
-@*                    </div>*@
-@*                </div>*@
-@*            </div>*@
-            <div class="col-md-4 p-2" data-ng-repeat="project in controller.projects">
-                <div class="card text-center">
-                    <div class="card-header card-header-primary"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">{{project.name}}</h4>
-                        <a href="/pages/{{project.business_id}}/projects/{{project.id}}/overview-dashboard" class="btn btn-outline-warning btn-round">
-                            <i class="fa fa-heart"></i> View Project
-                        </a>
-                    </div>
-                    <div class="card-footer text-muted">
-                        created on {{project.created_date_display}}
-                    </div>
+        <!-- Old card grid hidden; new vendor-style table layout below -->
+
+<div class="row" data-ng-show="controller.isLoaded">
+    <!-- <div class="col-md-8">
+        <button type="button" class="btn btn-default" data-toggle="modal" rel="tooltip" data-original-title="Add New Project"  data-target="#newProject" tooltip>New Project</button>
+    </div> -->
+    <div class="col-md-4 pull-right">
+        <div class="input-group no-border">
+            <input type="text" value="" class="form-control" placeholder="Search..." ng-model="searchText">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <i class="nc-icon nc-zoom-split"></i>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="row" data-ng-show="controller.isLoaded">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Project Name</th>
+                            <th class="text-center">Budget</th>
+                            <th class="text-center">Notes</th>
+                            
+                            <th class="text-center">Created</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="project in controller.projects | filter:searchText">
+                            <td class="text-center">{{ project.name }}</td>
+                            <td class="text-center">{{ project.budget }}</td>
+                            <td class="text-center">{{ project.notes }}</td>
+                            <td class="text-center">{{ project.created_date_display }}</td>
+                            
+                            <td class="td-actions text-center">
+                                
+                                <a href="/pages/{{project.business_id}}/projects/{{project.id}}/overview-dashboard" class="btn btn-warning" rel="tooltip" data-original-title="View Project" tooltip>
+                                    <i class="nc-icon nc-minimal-right"></i>
+                                </a>
+                                <button class="btn btn-danger" rel="tooltip" data-original-title="Delete Project" data-ng-click="controller.removeProject(@businessId, project.id)" tooltip>
+                                    <i class="nc-icon nc-scissors"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 }
