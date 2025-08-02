@@ -1,0 +1,24 @@
+Install Java 8 
+
+*** Java 8 and higher version doesn't match well with the version of Scala 2.12 and upgrading Scala version is a pain
+
+*** You can export $JAVA_HOME="/Library/***/java1.8.sdk/contents/Home"
+
+*** Don't forget to update the bash profile file
+
+*** Make sure to double check the java -version
+
+Install sbt 0.13 version
+
+*** use brew install sbt@0.13 to get sbt
+
+*** check version with command sbt sbtVersion
+
+*** then go into the project folder and run sbt clean
+
+*** sbt reload
+
+*** sbt compile
+
+*** sbt "run 7000" it must be 7000 due to security filters setup in the application config file 
+

@@ -1,0 +1,51 @@
+<!-- Edit Client Modal -->
+<div class="modal fade" id="editClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Client</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" class="form-control" data-ng-model="editClientModalController.currentClient.name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+
+                        <input id="phone" type="text" class="form-control" data-ng-model="editClientModalController.currentClient.phone_number" data-phone-number-format>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" class="form-control" data-ng-model="editClientModalController.currentClient.email">
+                    </div>
+                    <div class="form-group">
+                        <label>Event Date </label>
+                        <input id="project_event_date"  size="30" class="form-control" ng-model="editClientModalController.currentClient.event_date_moment_js"  ng-model-options="{ updateOn: 'blur' }"  moment-picker="editClientModalController.currentClient.event_date_moment_js" format="YYYY-MM-DD" start-view="year">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Initial Budget</label>
+                        <input id="contact" type="text" class="form-control" data-ng-model="editClientModalController.currentClient.budget" data-input-currency>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Client's status is  <b>{{editClientModalController.currentClient.status}} </b>    -- use drop down to switch --</label>
+                        <select id="status" class="form-control"  data-ng-model="editClientModalController.currentClient.new_status" ng-options= "item.type for item in newClientModalController.clientStatuses"></select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" rows="4" cols="80" class="form-control textarea" data-ng-model="editClientModalController.currentClient.notes"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-ng-click="editClientModalController.updateClient()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

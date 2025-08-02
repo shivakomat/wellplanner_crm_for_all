@@ -1,0 +1,72 @@
+@import play.api.libs.json.JsValue
+@(profileData: JsValue, userId: Int, businessId: Int)
+
+@main("Well Planner", "dashboard", "Main Dashboard", businessId) {
+    <div class="content" data-ng-controller="dashboardController as controller" data-ng-init="controller.init(@businessId)">
+        <div class="row text-center" data-ng-show="controller.isLoaded == false">
+            <div class="col-md-12 ml-auto mr-auto mt-auto mb-auto">
+                @*                <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>*@
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <div class="text-default text-center text-capitalize">Loading Dashboard</div>
+            </div>
+        </div>
+        <div class="row" data-ng-show="controller.isLoaded">
+            <div class="col-md-12 ml-auto mr-auto">
+                <div class="card card-user">
+@*                    <div class="image">*@
+@*                        <img src="@routes.Assets.versioned("template_assets/img/bg/damir-bosnjak.jpg")">*@
+@*                    </div>*@
+                    <div class="card-header text-center">
+                        <h2 class="card-title text-danger">{{controller.businessInfo.name}}</h2>
+                        <hr>
+                        <h5>Today is {{ controller.clock  | date:'medium' }}</h5>
+@*                        <h6>{{ controller.clock  | date:'medium' }}</h6>*@
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6 mr-auto ml-auto text-center">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail">
+                                        <img src="@routes.Assets.versioned("template_assets/img/image_placeholder.jpg")" alt="...">
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                    <div>
+                                        <span class="btn btn-rose btn-round btn-file">
+                                            <span class="fileinput-new">Upload Your Business Logo</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <a href="javascript:;" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <hr>
+                        <div class="button-container">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 col-6 ml-auto">
+                                    <h3><i class="nc-icon nc-tie-bow text-warning"></i></h3>
+                                    <h3><a href="/pages/projects/@businessId" style="color: #0f0f0f">{{controller.totalProjects}}</a></h3>
+                                    <h5><a href="/pages/projects/@businessId"  rel="tooltip" data-original-title="Click to view your projects" tooltip style="color: #0f0f0f">Total Projects</a></h5>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
+                                    <h3><i class="nc-icon nc-shop text-success"></i></h3>
+                                    <h3><a href="/pages/customers/@businessId" style="color: #0f0f0f">{{controller.totalClients}}</a></h3>
+                                    <h5><a href="/pages/customers/@businessId"  rel="tooltip" data-original-title="Click to view your clients" tooltip style="color: #0f0f0f">Total Clients</a></h5>
+                                </div>
+                                <div class="col-lg-3 mr-auto">
+                                    <h3><i class="nc-icon nc-circle-10 text-danger"></i></h3>
+                                    <h3><a href="/pages/vendors/@businessId" style="color: #0f0f0f">{{controller.totalVendors}}</a></h3>
+                                    <h5 class="text-default"><a href="/pages/vendors/@businessId"  rel="tooltip" data-original-title="Click to view your vendors" tooltip style="color: #0f0f0f">Total Vendor Contacts</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

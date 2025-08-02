@@ -1,0 +1,356 @@
+@(message: String, businessId: Int)
+
+@main("Well Planner", "customers", "Manage & Track Clients", businessId) {
+    <!-- New Project Modal -->
+    <div class="content" data-ng-controller="clientsController as controller" data-ng-init="controller.getAllClients(@businessId)">
+
+        <!-- Edit Client Modal -->
+        <data-edit-client-modal data-clients="controller.clients" data-totals="controller.totals" data-current-client="controller.currentClient" data-business-id=@businessId></data-edit-client-modal>
+
+        <!-- New Project Modal -->
+        <data-new-project-modal data-projects="controller.projects" data-client-id="controller.currentClientId" data-client-budget="controller.currentClientBudget" data-clients="controller.clients" data-client-event-date="controller.currentClientEventDate" data-business-id=@businessId></data-new-project-modal>
+
+        <div class="row">
+            <div class="col-md-8">
+                <button type="button" rel="tooltip" data-original-title="Add New Client" class="btn btn-default" data-toggle="modal" data-id="@businessId" data-target="#newCustomer" data-ng-click="controller.newItem()" tooltip>Add New Client</button>
+            </div>
+            <div class="col-md-4 pull-right">
+                <div class="input-group no-border">
+                    <input type="text" value="" class="form-control" placeholder="Search..." ng-model="searchText">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <i class="nc-icon nc-zoom-split"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalNew }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            New
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalFollowedUp }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Followed Up
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalConsultationsScheduled }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Consultation Scheduled
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalProposalSent }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Proposal Sent
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalProposalAccepted }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Proposal Accepted
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalContractSent }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Contract Sent
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalContractAccepted }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Contract Accepted
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalBooked }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Booked
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title ng-binding">{{ controller.totals.totalLost }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Lost
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr data-ng-show="controller.showNewItem">
+                                    <th class="text-center"></th>
+                                    <th class="text-center">Name *</th>
+                                    <th class="text-center">Phone Number *</th>
+                                    <th class="text-center">Email *</th>
+                                    <th class="text-center">Estimated Budget *</th>
+                                    <th class="text-center">Event Date *</th>
+                                    <th class="text-center">Status *</th>
+                                    @*                                    <th class="text-center">Notes</th>*@
+                                    <th class="text-center"></th>
+                                    <th class="text-center"></th>
+                                </tr>
+                                <tr data-ng-show="controller.showNewItem === false">
+                                    <th class="text-center"></th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Phone Number</th>
+                                    <th class="text-center">Email Address</th>
+                                    <th class="text-center">Estimated Budget</th>
+                                    <th class="text-center">Event Date</th>
+                                    <th class="text-center">Status</th>
+@*                                    <th class="text-center">Notes</th>*@
+                                    <th class="text-center">Project</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-ng-show="controller.showNewItem">
+                                    <th class="text-center">
+@*                                        <div class="form-check">*@
+@*                                            <label class="form-check-label">*@
+@*                                                <input class="form-check-input" type="checkbox" checked="">*@
+@*                                                <span class="form-check-sign"></span>*@
+@*                                            </label>*@
+@*                                        </div>*@
+                                    </th>
+                                    <td class="text-center">
+                                        <input type="text" style="text-align:center;" class="form-control" data-ng-model="controller.formData.customerName">
+                                    </td>
+                                    <td class="text-center">
+                                        <phonenumber-directive model='controller.formData.phoneNumber'></phonenumber-directive>
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="email" style="text-align:center;" class="form-control" data-ng-model="controller.formData.emailAddress">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" style="text-align:center;" class="form-control" data-ng-model="controller.formData.budget" data-input-currency>
+                                    </td>
+                                    <td class="text-center">
+                                        <input id="event_date"  size="30" class="form-control" ng-model="controller.formData.eventDate" ng-model-options="{ updateOn: 'blur' }"  moment-picker="controller.formData.eventDate" format="YYYY-MM-DD" start-view="year">
+                                    </td>
+                                    <td class="text-center">
+                                        <select class="form-control" data-ng-model="controller.formData.status" ng-options= "item.type for item in controller.clientStatuses"></select>
+                                    </td>
+                                    <td class="td-actions text-center">
+                                    </td>
+                                    <td class="td-actions text-center">
+                                        <button class="btn btn-success" rel="tooltip" data-original-title="Create Client" data-ng-click="controller.saveItem(@businessId)" tooltip>
+                                            <span class="btn-label">
+                                                <i class="nc-icon nc-check-2"></i>
+                                            </span>
+                                        </button>
+                                        <button class="btn btn-danger" rel="tooltip" data-original-title="Cancel" data-ng-click="controller.cancelItem()" tooltip>
+                                            <i class="nc-icon nc-scissors"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr data-ng-repeat="client in controller.clients | filter:searchText">
+                                    <th class="text-center">
+@*                                        <div class="form-check">*@
+@*                                            <label class="form-check-label">*@
+@*                                                <input class="form-check-input" type="checkbox" checked="">*@
+@*                                                <span class="form-check-sign"></span>*@
+@*                                            </label>*@
+@*                                        </div>*@
+                                    </th>
+                                    <td class="text-center">{{client[0].name}}</td>
+                                    <td class="text-center">{{client[0].phone_number | phonenumber}}</td>
+                                    <td class="text-center">{{client[0].email}}</td>
+                                    <td class="text-center">{{client[0].budget | currency}}</td>
+                                    <td class="text-center">{{client[0].event_date_display}}</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-primary btn-round">{{client[0].status}}</button>
+                                    </td>
+@*                                    <td class="td-actions text-center">*@
+@*                                        <button type="button" rel="tooltip" class="btn btn-outline-default" data-original-title="Add Notes">*@
+@*                                            <i class="nc-icon nc-paper"></i>*@
+@*                                        </button>*@
+@*                                    </td>*@
+                                    <td class="text-center">
+                                        <a data-ng-if="client[1] != null" href="/pages/{{client[0].business_id}}/projects/{{client[1]}}/overview-dashboard" class="btn btn-outline-warning btn-round">
+                                        <i class="fa fa-heart"></i> View Project
+                                    </a>
+                                        <button data-ng-if="client[1] === null" type="button" rel="tooltip" data-original-title="Create New Project" class="btn btn-outline-default"  data-toggle="modal" data-target="#newProject" data-ng-click="controller.setCurrentClient(client[0])" tooltip>START</button></td>
+                                    <td class="td-actions text-center">
+                                        <button class="btn btn-info" rel="tooltip" data-original-title="Add Proposal Document Link" data-toggle="modal" data-target="#proposalDocLink" tooltip>
+                                            <span class="btn-label">
+                                              <i class="nc-icon nc-paper"></i>
+                                            </span>
+                                        </button>
+                                        <button class="btn btn-info" rel="tooltip" data-original-title="Client Documents" data-toggle="modal" data-target="#clientDocsModal" data-ng-click="controller.setCurrentClient(client[0])" tooltip>
+                                            <span class="btn-label"><i class="fa fa-folder"></i></span>
+                                        </button>
+                                        <button class="btn btn-info" rel="tooltip" data-original-title="Add Contract Agreement Document Link" data-toggle="modal" data-target="#clientContractAgreement" tooltip>
+                                            <span class="btn-label">
+                                                <i class="nc-icon nc-share-66"></i>
+                                            </span>
+                                        </button>
+                                        <button class="btn btn-warning" rel="tooltip" data-original-title="Edit Client" data-toggle="modal" data-target="#editClient" data-ng-click="controller.updateClient(client[0])" tooltip>
+                                            <span class="btn-label">
+                                                <i class="nc-icon nc-ruler-pencil"></i>
+                                            </span>
+                                        </button>
+                                        <button data-ng-if="client[1] === null" class="btn btn-danger" rel="tooltip" data-original-title="Remove Client" data-ng-click="controller.removeClient(@businessId, client[0].id)" tooltip>
+                                            <i class="nc-icon nc-scissors"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Client Documents Modal Directive -->
+    </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal directive placed once at root level -->
+    <client-documents-modal client="controller.currentClient"></client-documents-modal>
+}

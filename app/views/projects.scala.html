@@ -1,0 +1,44 @@
+@(message: String, businessId: Int)
+
+@main("Well Planner", "projects", "Projects", businessId) {
+    <div class="content" data-ng-controller="projectsController as controller" data-ng-init="controller.getAllProjects(@businessId)">
+        <!-- New Project Modal -->
+        <data-new-project-modal data-projects="controller.projects" data-business-id=@businessId></data-new-project-modal>
+
+        <div class="row text-center" data-ng-show="controller.isLoaded == false">
+            <div class="col-md-12 ml-auto mr-auto mt-auto mb-auto">
+@*                <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>*@
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <div class="text-default text-center text-capitalize">Loading Projects</div>
+            </div>
+        </div>
+
+        <div class="row" data-ng-show="controller.isLoaded">
+@*            <div class="col-md-4 p-2">*@
+@*                <div class="card card-plain text-center">*@
+@*                    <div class="card-body">*@
+@*                        <h4 class="card-title">Create New Project</h4>*@
+@*                        <button class="btn btn-lg btn-warning"  data-toggle="modal" data-target="#newProject">*@
+@*                            <i class="nc-icon nc-simple-add"></i>*@
+@*                        </button>*@
+@*                    </div>*@
+@*                </div>*@
+@*            </div>*@
+            <div class="col-md-4 p-2" data-ng-repeat="project in controller.projects">
+                <div class="card text-center">
+                    <div class="card-header card-header-primary"></div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{project.brides_name}} & {{project.grooms_name}}</h4>
+                        <p class="card-text"><i class="nc-icon nc-spaceship"></i>{{project.event_date_display}}</p>
+                        <a href="/pages/{{project.business_id}}/projects/{{project.id}}/overview-dashboard" class="btn btn-outline-warning btn-round">
+                            <i class="fa fa-heart"></i> Enter
+                        </a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        created on {{project.created_date_display}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,108 @@
+@(message: String)
+
+@main("Well Planner", "invoices", "Business Invoices", 0) {
+    <!-- New Project Modal -->
+    <div class="modal fade" id="newCustomer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">Add Invoice</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Payment To</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Date</label>
+                            <input type="text" class="form-control datetimepicker" value="10/05/2018">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Payment Purpose</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Amount</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Status</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">ADD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#newCustomer">New Invoice</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Description</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Amount</th>
+                                    <th class="text-center">Additional Notes</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <th class="text-center">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" checked="">
+                                                <span class="form-check-sign"></span>
+                                            </label>
+                                        </div>
+                                    </th>
+                                    <td class="text-center">Andrew Mike</td>
+                                    <td class="text-center">Initial Payment</td>
+                                    <td class="text-center">March 28th 2020</td>
+                                    <td class="text-center">&dollar; 5,000</td>
+                                    <td class="td-actions text-center">
+                                        <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </td>
+                                    <td class="text-center">Payment Completed</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-warning btn-sm btn-icon">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

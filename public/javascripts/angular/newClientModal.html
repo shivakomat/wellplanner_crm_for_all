@@ -1,0 +1,49 @@
+<!-- New Client Modal -->
+<div class="modal fade" id="newClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="exampleModalLabel">New Client</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="client-name">Name</label>
+                        <input id="client-name" type="text" class="form-control" data-ng-model="newClientModalController.formData.customerName">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input id="client-phone" type="text" class="form-control" data-ng-model="newClientModalController.formData.phoneNumber" data-phone-number-format>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-email">Email</label>
+                        <input id="client-email" type="text" class="form-control" data-ng-model="newClientModalController.formData.emailAddress">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-contact">Budget</label>
+                        <input id="client-contact" type="text" class="form-control" data-ng-model="newClientModalController.formData.budget" data-input-currency>
+                    </div>
+                    <div class="form-group">
+                        <label>Event Date</label>
+                        <input id="modal_event_date"  size="30" class="form-control" ng-model="newClientModalController.formData.eventDate" ng-model-options="{ updateOn: 'blur' }"  moment-picker="newClientModalController.formData.eventDate" format="YYYY-MM-DD" start-view="year">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control" selected="New" data-ng-model="newClientModalController.formData.status" ng-options= "item.type for item in newClientModalController.clientStatuses"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-notes">Notes</label>
+                        <textarea id="client-notes" rows="4" cols="80" class="form-control textarea" data-ng-model="newClientModalController.formData.notes"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-ng-click="newClientModalController.newClient()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

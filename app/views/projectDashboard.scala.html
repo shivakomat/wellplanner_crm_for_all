@@ -1,0 +1,101 @@
+@import play.api.libs.json.JsValue
+@(title: String, projectId: Int, businessId: Int)
+
+@projectMain("Project Dashboard", "project-dashboard", "Project Overview Dashboard", projectId, businessId) {
+    <div class="content" data-ng-controller="projectDashboardController as controller" data-ng-init="controller.init(@businessId, @projectId)">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto">
+                <div class="card card-user">
+                    <div class="card-header text-center">
+                        <h2 class="card-title text-danger"> ~ {{controller.projectInfo.name}} ~</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="nc-icon nc-check-2 text-default"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-title">{{controller.totalCompletedTasks}} / {{controller.totalTasks}}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Completed Tasks / Total Tasks
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="nc-icon nc-bold text-default"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-category">{{controller.projectInfo.budget | currency}}</p>
+                                    <p class="card-title">{{controller.projectInfo.totalEstimate | currency}} / {{controller.projectInfo.totalActual | currency}}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Estimate / Actual
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="nc-icon nc-bank text-danger"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-category">- -</p>
+                                    <p class="card-title">- -
+                                    </p><p>
+                                </p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            Paid / Un Paid
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+            </div>
+        </div>
+    </div>
+}

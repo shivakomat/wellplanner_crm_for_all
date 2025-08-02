@@ -1,0 +1,829 @@
+@(title: String, activeMenuItem: String, pageTitle: String, businessId: Int)(content: Html)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <link rel="apple-touch-icon" sizes="76x76" href="@routes.Assets.versioned("template_assets/img/apple-icon.png")">
+        <link rel="icon" type="image/png" href="@routes.Assets.versioned("template_assets/img/favicon.png")">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>@title</title>
+
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
+            <!--     Fonts and icons     -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+
+            <!-- CSS Files -->
+        <link href="@routes.Assets.versioned("template_assets/css/bootstrap.min.css")" rel="stylesheet" />
+        <link href="@routes.Assets.versioned("template_assets/css/paper-dashboard.css?v=2.0.1")" rel="stylesheet" />
+
+@*        <link href="@routes.Assets.versioned("template_assets/css/loading_bar/hearLoading.css")" rel="stylesheet" />*@
+        <style>
+                .lds-grid {
+                    display: inline-block;
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                }
+                .lds-grid div {
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: #fff;
+                    animation: lds-grid 1.2s linear infinite;
+                }
+                .lds-grid div:nth-child(1) {
+                    top: 8px;
+                    left: 8px;
+                    animation-delay: 0s;
+                }
+                .lds-grid div:nth-child(2) {
+                    top: 8px;
+                    left: 32px;
+                    animation-delay: -0.4s;
+                }
+                .lds-grid div:nth-child(3) {
+                    top: 8px;
+                    left: 56px;
+                    animation-delay: -0.8s;
+                }
+                .lds-grid div:nth-child(4) {
+                    top: 32px;
+                    left: 8px;
+                    animation-delay: -0.4s;
+                }
+                .lds-grid div:nth-child(5) {
+                    top: 32px;
+                    left: 32px;
+                    animation-delay: -0.8s;
+                }
+                .lds-grid div:nth-child(6) {
+                    top: 32px;
+                    left: 56px;
+                    animation-delay: -1.2s;
+                }
+                .lds-grid div:nth-child(7) {
+                    top: 56px;
+                    left: 8px;
+                    animation-delay: -0.8s;
+                }
+                .lds-grid div:nth-child(8) {
+                    top: 56px;
+                    left: 32px;
+                    animation-delay: -1.2s;
+                }
+                .lds-grid div:nth-child(9) {
+                    top: 56px;
+                    left: 56px;
+                    animation-delay: -1.6s;
+                }
+                @@keyframes lds-grid {
+                0%, 100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+                }
+
+        </style>
+        <style>
+                .lds-roller {
+                    display: inline-block;
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                }
+                .lds-roller div {
+                    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                    transform-origin: 40px 40px;
+                }
+                .lds-roller div:after {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background: #66615B;
+                    margin: -4px 0 0 -4px;
+                }
+                .lds-roller div:nth-child(1) {
+                    animation-delay: -0.036s;
+                }
+                .lds-roller div:nth-child(1):after {
+                    top: 63px;
+                    left: 63px;
+                }
+                .lds-roller div:nth-child(2) {
+                    animation-delay: -0.072s;
+                }
+                .lds-roller div:nth-child(2):after {
+                    top: 68px;
+                    left: 56px;
+                }
+                .lds-roller div:nth-child(3) {
+                    animation-delay: -0.108s;
+                }
+                .lds-roller div:nth-child(3):after {
+                    top: 71px;
+                    left: 48px;
+                }
+                .lds-roller div:nth-child(4) {
+                    animation-delay: -0.144s;
+                }
+                .lds-roller div:nth-child(4):after {
+                    top: 72px;
+                    left: 40px;
+                }
+                .lds-roller div:nth-child(5) {
+                    animation-delay: -0.18s;
+                }
+                .lds-roller div:nth-child(5):after {
+                    top: 71px;
+                    left: 32px;
+                }
+                .lds-roller div:nth-child(6) {
+                    animation-delay: -0.216s;
+                }
+                .lds-roller div:nth-child(6):after {
+                    top: 68px;
+                    left: 24px;
+                }
+                .lds-roller div:nth-child(7) {
+                    animation-delay: -0.252s;
+                }
+                .lds-roller div:nth-child(7):after {
+                    top: 63px;
+                    left: 17px;
+                }
+                .lds-roller div:nth-child(8) {
+                    animation-delay: -0.288s;
+                }
+                .lds-roller div:nth-child(8):after {
+                    top: 56px;
+                    left: 12px;
+                }
+                @@keyframes lds-roller {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+                }
+        </style>
+        <style>
+                .lds-heart {
+                    display: inline-block;
+                    position: relative;
+                    width: 160px;
+                    height: 160px;
+                    transform: rotate(45deg);
+                    transform-origin: 80px 80px;
+                }
+                .lds-heart div {
+                    top: 64px;
+                    left: 64px;
+                    position: absolute;
+                    width: 64px;
+                    height: 64px;
+                    background: #66615B;
+                    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+                }
+                .lds-heart div:after,
+                .lds-heart div:before {
+                    content: " ";
+                    position: absolute;
+                    display: block;
+                    width: 64px;
+                    height: 64px;
+                    background: #66615B;
+                }
+                .lds-heart div:before {
+                    left: -48px;
+                    border-radius: 50% 0 0 50%;
+                }
+                .lds-heart div:after {
+                    top: -48px;
+                    border-radius: 50% 50% 0 0;
+                }
+                @@keyframes lds-heart {
+                0% {
+                    transform: scale(0.95);
+                }
+                5% {
+                    transform: scale(1.1);
+                }
+                39% {
+                    transform: scale(0.85);
+                }
+                45% {
+                    transform: scale(1);
+                }
+                60% {
+                    transform: scale(0.95);
+                }
+                100% {
+                    transform: scale(0.9);
+                }
+                }
+
+        </style>
+
+        <link href="@routes.Assets.versioned("template_assets/css/angular-moment-picker.min.css")" rel="stylesheet" />
+
+
+    </head>
+    <body class=""  data-ng-app="wellPlanner" data-ng-cloak>
+
+        <div class="wrapper">
+            <div class="sidebar" data-color="white" data-active-color="danger">
+                    <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+                <div class="logo">
+                    <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+                        <div class="logo-image-small">
+                            <img src="@routes.Assets.versioned("template_assets/img/logo-small.png")">
+                        </div>
+                    </a>
+                    <a href="/pages/dashboard/@businessId" class="simple-text logo-normal">
+                        Well Planner
+                        <!-- <div class="logo-image-big"> <img src="../assets/img/logo-big.png"> </div> -->
+                    </a>
+                </div>
+                <div class="sidebar-wrapper">
+                    <ul class="nav">
+
+                        @if(activeMenuItem == "dashboard") {
+                            <li class="active">
+                        } else {
+                            <li>
+                        }
+                            <a href="/pages/dashboard/@businessId">
+                                <i class="nc-icon nc-air-baloon"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+
+                    @if(activeMenuItem == "projects") {
+                        <li class="active">
+                    } else {
+                        <li>
+                    }
+                            <a href="/pages/projects/@businessId">
+                                <i class="nc-icon nc-tie-bow"></i>
+                                <p>Projects</p>
+                            </a>
+                        </li>
+
+                    @if(activeMenuItem == "vendors") {
+                        <li class="active">
+                    } else {
+                            <li>
+                            }
+                            <a href="/pages/vendors/@businessId">
+                                <i class="nc-icon nc-shop"></i>
+                                <p>Vendors</p>
+                            </a>
+                        </li>
+
+                    @if(activeMenuItem == "customers") {
+                        <li class="active">
+                    } else {
+                        <li>
+                    }
+                            <a href="/pages/customers/@businessId">
+                                <i class="nc-icon nc-single-02"></i>
+                                <p>Clients</p>
+                            </a>
+                        </li>
+
+@*                        @if(activeMenuItem == "invoices") {*@
+@*                            <li class="active">*@
+@*                        } else {*@
+@*                            <li>*@
+@*                        }*@
+@*                            <a href="/pages/invoices">*@
+@*                                <i class="nc-icon nc-badge"></i>*@
+@*                                <p>Invoices</p>*@
+@*                            </a>*@
+@*                        </li>*@
+
+@*                        @if(activeMenuItem == "calendar") {*@
+@*                            <li class="active">*@
+@*                        } else {*@
+@*                            <li>*@
+@*                        }*@
+@*                            <a href="/pages/calendar">*@
+@*                                <i class="nc-icon nc-calendar-60"></i>*@
+@*                                <p>Calendar</p>*@
+@*                            </a>*@
+@*                        </li>*@
+                    </ul>
+                </div>
+            </div>
+            <div class="main-panel">
+                    <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+                    <div class="container-fluid">
+                        <div class="navbar-wrapper">
+@*                            <div class="navbar-minimize">*@
+@*                                <button id="minimizeSidebar" class="btn btn-icon btn-round">*@
+@*                                    <i class="nc-icon nc-minimal-right text-center visible-on-sidebar-mini"></i>*@
+@*                                    <i class="nc-icon nc-minimal-left text-center visible-on-sidebar-regular"></i>*@
+@*                                </button>*@
+@*                            </div>*@
+                            <div class="navbar-toggle">
+                                <button type="button" class="navbar-toggler">
+                                    <span class="navbar-toggler-bar bar1"></span>
+                                    <span class="navbar-toggler-bar bar2"></span>
+                                    <span class="navbar-toggler-bar bar3"></span>
+                                </button>
+                            </div>
+                            <a class="navbar-brand" href="#pablo">@pageTitle</a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-bar navbar-kebab"></span>
+                            <span class="navbar-toggler-bar navbar-kebab"></span>
+                            <span class="navbar-toggler-bar navbar-kebab"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="text-danger"><i class="nc-icon nc-simple-add text-danger"></i><b> New </b></span>
+                                        <p><span class="d-lg-none d-md-block text-danger">Some Actions</span></p>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+@*                                        <a class="dropdown-item" data-toggle="modal" href="#newProject">New Project</a>*@
+                                        <a class="dropdown-item" data-toggle="modal" href="#newClient">New Client</a>
+                                        <a class="dropdown-item" data-toggle="modal" href="#newVendor">New Vendor</a>
+@*                                        <a class="dropdown-item" data-toggle="modal" href="#newC">New Inquiry</a>*@
+                                        @*                                        <a class="dropdown-item" href="#">INVOICES</a>*@
+                                        @*                                        <a class="dropdown-item" href="#">COMPANY CALENDAR</a>*@
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span><i class="nc-icon nc-spaceship"></i> Main Menu</span>
+                                        <p>
+                                            <span class="d-lg-none d-md-block">Some Actions</span>
+                                        </p>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="/pages/dashboard/@businessId">Main Dashboard</a>
+                                        <a class="dropdown-item" href="/pages/projects/@businessId">Projects</a>
+                                        <a class="dropdown-item" href="/pages/vendors/@businessId">Vendors</a>
+                                        <a class="dropdown-item" href="/pages/customers/@businessId">Clients</a>
+                                        @*                                        <a class="dropdown-item" href="#">INVOICES</a>*@
+                                        @*                                        <a class="dropdown-item" href="#">COMPANY CALENDAR</a>*@
+                                    </div>
+                                </li>
+                                <li class="nav-item btn-rotate dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span><i class="nc-icon nc-bell-55"></i> Alerts</span>
+                                        <p>
+                                            <span class="d-lg-none d-md-block">Some Actions</span>
+                                        </p>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Coming Soon!</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-rotate" href="/pages/@businessId/business-settings">
+                                        @if(activeMenuItem == "settings") {
+                                            <span class="text-danger"><i class="nc-icon nc-settings-gear-65 text-danger"></i>Settings</span>
+                                        } else {
+                                            <span><i class="nc-icon nc-settings-gear-65"></i> Settings</span>
+                                        }
+                                        <p><span class="d-lg-none d-md-block">Account</span></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-rotate" href="/logout">
+                                        <span><i class="nc-icon nc-button-power"></i>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                    <!-- End Navbar -->
+
+                <!-- Start of Modals -->
+                    <!-- New Project Modal Disabled Temporarily-->
+@*                <data-new-project-modal data-business-id=@businessId></data-new-project-modal>*@
+
+                    <!-- New Client Modal -->
+                <data-new-client-modal data-business-id=@businessId></data-new-client-modal>
+
+                    <!-- New Vendor Contact Modal -->
+                <data-new-vendor-modal data-business-id=@businessId></data-new-vendor-modal>
+
+                <!-- End of Modals -->
+
+                @content
+
+                <footer class="footer footer-black  footer-white ">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <nav class="footer-nav">
+                                <ul>
+@*                                    <li>*@
+@*                                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>*@
+@*                                    </li>*@
+@*                                    <li>*@
+@*                                        <a href="http://blog.creative-tim.com/" target="_blank">Blog</a>*@
+@*                                    </li>*@
+@*                                    <li>*@
+@*                                        <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>*@
+@*                                    </li>*@
+                                </ul>
+                            </nav>
+                            <div class="credits ml-auto">
+                                <span class="copyright">
+                                    ©
+                                    <script>
+                                            document.write(new Date().getFullYear())
+                                    </script>, made with <i class="fa fa-heart heart"></i>  by Shiva Komatreddy
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+            <!--   Core JS Files   -->
+        <script src="@routes.Assets.versioned("template_assets/js/core/jquery.min.js")"></script>
+
+        <script src="@routes.Assets.versioned("template_assets/js/core/popper.min.js")"></script>
+
+        <script src="@routes.Assets.versioned("template_assets/js/core/bootstrap.min.js")"></script>
+
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/perfect-scrollbar.jquery.min.js")"></script>
+
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/moment.min.js")"></script>
+
+@*        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>*@
+
+
+            <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/bootstrap-switch.js")"></script>
+
+            <!--  Plugin for Sweet Alert -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/sweetalert2.min.js")"></script>
+            <!-- Forms Validations Plugin -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/jquery.validate.min.js")"></script>
+
+            <!--  Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/jquery.bootstrap-wizard.js")"></script>
+
+            <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/bootstrap-selectpicker.js")"></script>
+
+            <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/bootstrap-datetimepicker.js")"></script>
+
+            <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
+
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/jquery.dataTables.min.js")"></script>
+            <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/bootstrap-tagsinput.js")"></script>
+            <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/jasny-bootstrap.min.js")"></script>
+            <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/fullcalendar.min.js")"></script>
+            <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/jquery-jvectormap.js")" ></script>
+            <!--  Plugin for the Bootstrap Table -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/nouislider.min.js")" ></script>
+            <!--  Google Maps Plugin    -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&libraries=places"></script>
+            <!-- Chart JS -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/chartjs.min.js")"></script>
+            <!--  Notifications Plugin    -->
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/bootstrap-notify.js")" ></script>
+            <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="@routes.Assets.versioned("template_assets/js/paper-dashboard.min.js?v=2.0.1")" type="text/javascript"></script>
+            <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+        <script src="@routes.Assets.versioned("template_assets/demo/demo.js")"></script>
+        <script>
+                $(document).ready(function() {
+                    // Javascript method's body can be found in assets/js/demos.js
+                    // demo.initDashboardPageCharts();
+                    // demo.initVectorMap();
+
+
+                });
+
+                <!-- javascript for Toggle Button Swtiches -->
+                $('.bootstrap-switch').each(function(){
+                    $this = $(this);
+                    data_on_label = $this.data('on-label') || '';
+                    data_off_label = $this.data('off-label') || '';
+
+                    $this.bootstrapSwitch({
+                        onText: data_on_label,
+                        offText: data_off_label
+                    });
+                });
+
+                <!-- javascript for Date Time Picker -->
+                $('.datetimepicker').datetimepicker({
+                    icons: {
+                        date: "fa fa-calendar",
+                        up: "fa fa-chevron-up",
+                        down: "fa fa-chevron-down",
+                        previous: 'fa fa-chevron-left',
+                        next: 'fa fa-chevron-right',
+                        today: 'fa fa-screenshot',
+                        clear: 'fa fa-trash',
+                        close: 'fa fa-remove'
+                    }
+                });
+        </script>
+
+
+        <script src="@routes.Assets.versioned("node_modules/angular/angular.js")"></script>
+        <script src="@routes.Assets.versioned("node_modules/angular-animate/angular-animate.js")"></script>
+        <script src="@routes.Assets.versioned("node_modules/angular-aria/angular-aria.js")"></script>
+        <script src="@routes.Assets.versioned("node_modules/angular-material/angular-material.js")"></script>
+        <script src="@routes.Assets.versioned("node_modules/angular-jwt/dist/angular-jwt.js")"></script>
+        <script src="@routes.Assets.versioned("node_modules/angular-storage/dist/angular-storage.js")"></script>
+        <script src="@routes.Assets.versioned("node_modules/angular-ui-router/release/angular-ui-router.js")"></script>
+        <script src="@routes.Assets.versioned("node_modules/auth0-angular/build/auth0-angular.js")"></script>
+        <script src="@routes.Assets.versioned("node_modules/auth0-js/build/auth0.js")"></script>
+
+        <script src="@routes.Assets.versioned("template_assets/js/plugins/angular-moment-picker.min.js")"></script>
+
+@*        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>*@
+@*        <script src="@routes.Assets.versioned("node_modules/angular-loading-bar/build/loading-bar.js")"></script>*@
+@*        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>*@
+@*        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap.min.js"></script>*@
+        <script>
+            alerts = {
+                autoCloseAlert: function(type, _title, _desc) {
+                    if (type == 'basic') {
+                        swal({
+                            title: _title,
+                            buttonsStyling: false,
+                            confirmButtonClass: "btn btn-success"
+                        }).catch(swal.noop);
+
+                    } else if (type == 'title-and-text') {
+                        swal({
+                            title: _title,
+                            text: _desc,
+                            buttonsStyling: false,
+                            confirmButtonClass: "btn btn-info"
+                        }).catch(swal.noop);
+
+                    } else if (type == 'success-message') {
+                        swal({
+                            title: _title,
+                            text: _desc,
+                            buttonsStyling: false,
+                            confirmButtonClass: "btn btn-success",
+                            type: "success"
+                        }).catch(swal.noop);
+
+                    } else if (type == 'warning-message-and-confirmation') {
+                        swal({
+                            title: 'Are you sure?',
+                            text: "You won't be able to revert this!",
+                            type: 'warning',
+                            showCancelButton: true,
+                            confirmButtonClass: 'btn btn-success',
+                            cancelButtonClass: 'btn btn-danger',
+                            confirmButtonText: 'Yes, delete it!',
+                            buttonsStyling: false
+                        }).then(function() {
+                            swal({
+                                title: 'Deleted!',
+                                text: 'Your file has been deleted.',
+                                type: 'success',
+                                confirmButtonClass: "btn btn-success",
+                                buttonsStyling: false
+                            });
+                        }).catch(swal.noop);
+                    } else if (type == 'warning-message-and-cancel') {
+                        swal({
+                            title: 'Are you sure?',
+                            text: 'You will not be able to recover this imaginary file!',
+                            type: 'warning',
+                            showCancelButton: true,
+                            confirmButtonText: 'Yes, delete it!',
+                            cancelButtonText: 'No, keep it',
+                            confirmButtonClass: "btn btn-success",
+                            cancelButtonClass: "btn btn-danger",
+                            buttonsStyling: false
+                        }).then(function() {
+                            swal({
+                                title: 'Deleted!',
+                                text: 'Your imaginary file has been deleted.',
+                                type: 'success',
+                                confirmButtonClass: "btn btn-success",
+                                buttonsStyling: false
+                            }).catch(swal.noop);
+                        }, function(dismiss) {
+                            // dismiss can be 'overlay', 'cancel', 'close', 'esc', 'timer'
+                            if (dismiss === 'cancel') {
+                                swal({
+                                    title: 'Cancelled',
+                                    text: 'Your imaginary file is safe :)',
+                                    type: 'error',
+                                    confirmButtonClass: "btn btn-info",
+                                    buttonsStyling: false
+                                }).catch(swal.noop);
+                            }
+                        }).catch(swal.noop);
+
+                    } else if (type == 'custom-html') {
+                        swal({
+                            title: 'HTML example',
+                            buttonsStyling: false,
+                            confirmButtonClass: "btn btn-success",
+                            html: 'You can use <b>bold text</b>, ' +
+                                    '<a href="http://github.com">links</a> ' +
+                                    'and other HTML tags'
+                        }).catch(swal.noop);
+
+                    } else if (type == 'auto-close') {
+                        swal({
+                            title: _title,
+                            text: "I will close in 2 seconds.",
+                            timer: 2000,
+                            showConfirmButton: true
+                        }).catch(swal.noop);
+                    } else if (type == 'input-field') {
+                        swal({
+                            title: 'Input something',
+                            html: '<div class="form-group">' +
+                                    '<input id="input-field" type="text" class="form-control" />' +
+                                    '</div>',
+                            showCancelButton: true,
+                            confirmButtonClass: 'btn btn-success',
+                            cancelButtonClass: 'btn btn-danger',
+                            buttonsStyling: false
+                        }).then(function(result) {
+                            swal({
+                                type: 'success',
+                                html: 'You entered: <strong>' +
+                                        $('#input-field').val() +
+                                        '</strong>',
+                                confirmButtonClass: 'btn btn-success',
+                                buttonsStyling: false
+
+                            }).catch(swal.noop);
+                        }).catch(swal.noop);
+                    }
+                }
+            }
+        </script>
+
+@*        <script>*@
+@*            <!-- javascript for init -->*@
+@*            $calendar = $('#fullCalendar');*@
+
+@*            today = new Date();*@
+@*            y = today.getFullYear();*@
+@*            m = today.getMonth();*@
+@*            d = today.getDate();*@
+
+@*            $calendar.fullCalendar({*@
+@*                viewRender: function(view, element) {*@
+@*                    // We make sure that we activate the perfect scrollbar when the view isn't on Month*@
+@*                    if (view.name != 'month'){*@
+@*                        $(element).find('.fc-scroller').perfectScrollbar();*@
+@*                    }*@
+@*                },*@
+@*                header: {*@
+@*                    left: 'title',*@
+@*                    center: 'month,agendaWeek,agendaDay',*@
+@*                    right: 'prev,next,today'*@
+@*                },*@
+@*                defaultDate: today,*@
+@*                selectable: true,*@
+@*                selectHelper: true,*@
+@*                views: {*@
+@*                    month: { // name of view*@
+@*                        titleFormat: 'MMMM YYYY'*@
+@*                        // other view-specific options here*@
+@*                    },*@
+@*                    week: {*@
+@*                        titleFormat: " MMMM D YYYY"*@
+@*                    },*@
+@*                    day: {*@
+@*                        titleFormat: 'D MMM, YYYY'*@
+@*                    }*@
+@*                },*@
+
+@*                select: function(start, end) {*@
+
+@*                    // on select we show the Sweet Alert modal with an input*@
+@*                    swal({*@
+@*                        title: 'Create an Event',*@
+@*                        html: '<div class="form-group">' +*@
+@*                                '<input class="form-control" placeholder="Event Title" id="input-field">' +*@
+@*                                '</div>',*@
+@*                        showCancelButton: true,*@
+@*                        confirmButtonClass: 'btn btn-success',*@
+@*                        cancelButtonClass: 'btn btn-danger',*@
+@*                        buttonsStyling: false*@
+@*                    }).then(function(result) {*@
+
+@*                        var eventData;*@
+@*                        event_title = $('#input-field').val();*@
+
+@*                        if (event_title) {*@
+@*                            eventData = {*@
+@*                                title: event_title,*@
+@*                                start: start,*@
+@*                                end: end*@
+@*                            };*@
+@*                            $calendar.fullCalendar('renderEvent', eventData, true); // stick? = true*@
+@*                        }*@
+
+@*                        $calendar.fullCalendar('unselect');*@
+
+@*                    });*@
+@*                },*@
+@*                editable: true,*@
+@*                eventLimit: true, // allow "more" link when too many events*@
+
+
+@*                // color classes: [ event-blue | event-azure | event-green | event-orange | event-red ]*@
+@*                events: [*@
+@*                    {*@
+@*                        title: 'All Day Event',*@
+@*                        start: new Date(y, m, 1),*@
+@*                        className: 'event-default'*@
+@*                    },*@
+@*                    {*@
+@*                        title: 'Meeting',*@
+@*                        start: new Date(y, m, d-1, 10, 30),*@
+@*                        allDay: false,*@
+@*                        className: 'event-green'*@
+@*                    },*@
+@*                    {*@
+@*                        title: 'Lunch',*@
+@*                        start: new Date(y, m, d+7, 12, 0),*@
+@*                        end: new Date(y, m, d+7, 14, 0),*@
+@*                        allDay: false,*@
+@*                        className: 'event-red'*@
+@*                    },*@
+@*                    {*@
+@*                        title: 'Nud-pro Launch',*@
+@*                        start: new Date(y, m, d-2, 12, 0),*@
+@*                        allDay: true,*@
+@*                        className: 'event-azure'*@
+@*                    },*@
+@*                    {*@
+@*                        title: 'Click for Google',*@
+@*                        start: new Date(y, m, 21),*@
+@*                        end: new Date(y, m, 22),*@
+@*                        url: 'https://google.com',*@
+@*                        className: 'event-orange'*@
+@*                    }*@
+@*                ]*@
+@*            });*@
+@*        </script>*@
+        <script src="@routes.Assets.versioned("javascripts/angular/main.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/signUpController.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/clientsFactory.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/clientsController.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/vendorContactsFactory.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/vendorContactsController.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/projectsFactory.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/newProjectModalDirective.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/projectsController.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/clientDocumentsFactory.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/clientDocumentsModal.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/businessFactory.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/businessFactory.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/dashboardController.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/settingsController.js")"></script>
+        <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
+
+        <script src="https://cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
+
+        <script type="text/javascript">
+          var webAuth = new auth0.WebAuth({
+              domain:       'wellplanner.auth0.com',
+              clientID:     'u8R70ddHX8BmP2Jn2cc3xJBR6jEzM8x6'
+          });
+        </script>
+
+    </body>
+</html>
