@@ -43,6 +43,7 @@ libraryDependencies ++= Seq(
 )
 
 // sbt-web fix for Play's test assets
+unmanagedResourceDirectories in Assets += baseDirectory.value / "public" / "node_modules"
 unmanagedResourceDirectories in Test += baseDirectory.value / "target/web/public/test"
 
 // Disable file watch service (optional but speeds up dev mode on macOS)
