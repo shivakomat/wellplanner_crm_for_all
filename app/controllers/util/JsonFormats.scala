@@ -2,7 +2,7 @@ package controllers.util
 
 import model.api.businesses.AdminSignUpMessage
 import model.api.clients.{ClientLoginMessage, ClientMessage, NewClientMessage}
-import model.api.projects.{BudgetBreakdownList, NewWeddingProjectMessage, SubBreakDownWithPayments, TaskList, TimelineItemsList}
+import model.api.projects.{BudgetBreakdownList, NewProjectMessage, SubBreakDownWithPayments, TaskList, TimelineItemsList}
 import model.api.users.UserMessage
 import model.dataModels._
 import org.joda.time.DateTime
@@ -17,7 +17,7 @@ object JsonFormats {
   implicit val userFormat = Json.format[User]
   implicit val businessFormat = Json.format[Business]
   implicit val adminSignUpMessageFormat = Json.format[AdminSignUpMessage]
-  implicit val newWeddingProjectMessage = Json.format[NewWeddingProjectMessage]
+  implicit val newProjectMessageFormat = Json.format[NewProjectMessage]
   implicit val newClientMessage = Json.format[NewClientMessage]
   implicit val clientFormat = Json.format[Client]
   implicit val vendorContactFormat = Json.format[VendorContact]

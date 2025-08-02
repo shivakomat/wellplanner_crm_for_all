@@ -1,3 +1,7 @@
 package model.api.projects
 
-case class NewWeddingProjectMessage(bride: String, groom: String, eventDate: Int, budget: Double, businessId: Int, clientId: Int)
+case class NewProjectMessage(name: String,
+                              budget: Option[Double] = None,
+                              notes: Option[String] = None,
+                              businessId: Int,
+                              clientId: Int)

@@ -11,18 +11,16 @@
                 <form>
                     <div class="form-group">
                         <p>(*) required</p>
-                        <label for="brideName">Bride *</label>
-                        <input id="brideName" type="text" class="form-control" data-ng-model="newProjectController.formData.bride">
-                        <label for="groomName">Groom *</label>
-                        <input id="groomName" type="text" class="form-control" data-ng-model="newProjectController.formData.groom">
+                        <label for="projectName">Project Name *</label>
+                        <input id="projectName" type="text" class="form-control" data-ng-model="newProjectController.formData.name">
                     </div>
                     <div class="form-group">
-                        <label for="budgetApproximation">Actual Budget* </label>
-                        <input id="budgetApproximation" type="text" class="form-control" data-ng-model="newProjectController.clientBudget" data-input-currency>
+                        <label for="budget">Budget (optional)</label>
+                        <input id="budget" type="text" class="form-control" data-ng-model="newProjectController.formData.budget" data-input-currency>
                     </div>
                     <div class="form-group">
-                        <label>Actual Event Date *</label>
-                        <input id="project_event_date"  size="30" class="form-control" ng-model="newProjectController.clientEventDate" ng-model-options="{ updateOn: 'blur' }"  moment-picker="newProjectController.formData.eventDate" format="YYYY-MM-DD" start-view="year"/>
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" class="form-control" rows="3" data-ng-model="newProjectController.formData.notes"></textarea>
                     </div>
                 </form>
             </div>

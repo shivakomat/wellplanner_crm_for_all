@@ -34,13 +34,9 @@ function NewProjectController(ClientsFactory, ProjectsFactory, $scope, templates
     }
 
     function newProject() {
-        var newProject = {};
-        newProject = newProjectController.formData;
+        var newProject = angular.copy(newProjectController.formData);
         newProject.businessId = newProjectController.businessId;
         newProject.clientId = newProjectController.clientId;
-        newProject.budget = newProjectController.clientBudget;
-        newProject.eventDate = parseInt(newProjectController.clientEventDate.format('YYYYMMDD'));
-
         console.log(newProject);
 
         ProjectsFactory.addProject(newProject, function mySuccess() {

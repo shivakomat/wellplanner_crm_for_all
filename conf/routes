@@ -59,7 +59,7 @@ POST /users/login              controllers.ApplicationLoginController.loginUser
 
 # # Projects
 +nocsrf
-POST   /businesses/projects          controllers.ProjectsController.newWeddingProject
+POST   /businesses/projects          controllers.ProjectsController.newProject
 
 GET    /businesses/:businessId/projects          controllers.ProjectsController.projectsByBusiness(businessId: Int)
 

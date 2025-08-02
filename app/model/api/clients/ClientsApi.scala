@@ -91,18 +91,17 @@ class ClientsApi(dbApi: DBApi, ws: WSClient) {
 
   def allClientsByBusiness(businessId: Int): Map[Client, Option[Int]] = {
     val allClients = clientsDb.list().filter(_.business_id == businessId)
-    val allProjectsOfBusiness = projectsApi.allByBusiness(businessId)
-    val clientIdToProjectIdMappings = allProjectsOfBusiness.groupBy(project => project.client_id).mapValues(_.head.id)
-    val allClientMessages = allClients map {
-      client => {
-        if(clientIdToProjectIdMappings.get(client.id.get).nonEmpty) {
-          val clientAssociatedProjectId = clientIdToProjectIdMappings.get(client.id.get).get
-          if (clientAssociatedProjectId.nonEmpty) (client, clientAssociatedProjectId) else (client, None)
-        }
-        else (client, None)
-      }
-    }
-    allClientMessages.toMap
+
+    // Build a simple Map[clientId -> projectId] for quick lookup, ignoring projects without IDs
+    val projectByClient: Map[Int, Int] = projectsApi
+      .allByBusiness(businessId)
+      .flatMap(p => p.id.map(id => p.client_id -> id))
+      .toMap
+
+    allClients.map { client =>
+      val projectOpt = client.id.flatMap(projectByClient.get)
+      client -> projectOpt
+    }.toMap
   }
 
 

@@ -1,5 +1,6 @@
 package model.api.projects
 
+import model.api.projects.{BudgetBreakdownList, NewProjectMessage, SubBreakDownWithPayments, TaskList, TimelineItemsList}
 import model.dataModels.Project
 import model.databases.ProjectsDbFacade
 import model.databases.ClientsDB
@@ -7,7 +8,7 @@ import model.tools.DateTimeNow
 import play.api.db.DBApi
 
 trait ProjectsApi {
-  def addNewWeddingEventProject(weddingProject: NewWeddingProjectMessage): Either[String, Long]
+  def addNewProject(newProjectMsg: NewProjectMessage): Either[String, Long]
 
   def allByBusiness(businessId: Int): Seq[Project]
 
@@ -30,17 +31,14 @@ class ProjectsFacade(dbApi: DBApi) extends ProjectsApi {
     projectsDB.byId(projectId, businessId)
   }
 
-  override def addNewWeddingEventProject(weddingProject: NewWeddingProjectMessage): Either[String, Long] = {
+  override def addNewProject(newProjectMsg: NewProjectMessage): Either[String, Long] = {
     val eventType = "WEDDING"
-    print(weddingProject.toString)
-    val newProject = Project(name = weddingProject.groom.concat(" & " + weddingProject.bride),
-      event_type = Some(eventType),
-      brides_name = Some(weddingProject.bride),
-      grooms_name = Some(weddingProject.groom),
-      event_date = weddingProject.eventDate,
-      budget = weddingProject.budget,
-      client_id = weddingProject.clientId,
-      business_id = weddingProject.businessId,
+    print(newProjectMsg.toString)
+    val newProject = Project(name = newProjectMsg.name,
+      budget = newProjectMsg.budget,
+      notes = newProjectMsg.notes,
+      client_id = newProjectMsg.clientId,
+      business_id = newProjectMsg.businessId,
       modified_date = DateTimeNow.getCurrent,
       created_date = DateTimeNow.getCurrent)
     val transactionResult = projectsDB.addNewProject(newProject) match {
@@ -49,9 +47,9 @@ class ProjectsFacade(dbApi: DBApi) extends ProjectsApi {
     }
 
     if(transactionResult.isRight)
-      clientsDB.byId(weddingProject.clientId) match {
+      clientsDB.byId(newProjectMsg.clientId) match {
         case Some(c) =>
-          val updatedRows = clientsDB.updateBasicClientInfo(c.copy(event_date = weddingProject.eventDate))
+          val updatedRows = clientsDB.updateBasicClientInfo(c)
           if(updatedRows == 1) transactionResult
           else Left("Failed at updating client info with the latest event date!!!")
         case None => Left("Failed to find the existing client!!!")

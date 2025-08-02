@@ -3,7 +3,7 @@ package controllers
 import com.google.inject.Inject
 import controllers.util.JsonFormats._
 import controllers.util.ResponseTypes._
-import model.api.projects.{NewWeddingProjectMessage, ProjectsFacade}
+import model.api.projects.{NewProjectMessage, ProjectsFacade}
 import play.api.Logger
 import play.api.db.DBApi
 import play.api.libs.json.{JsValue, Json}
@@ -24,10 +24,10 @@ class ProjectsController  @Inject() (dbApi: DBApi, cc: ControllerComponents, ws:
   private def badRequest: Future[Result] =
     Future.successful(errorResponse(BAD_REQUEST, Seq("Unable to recognize request")))
 
-  def newWeddingProject(): Action[JsValue] = Action.async(parse.json) { request =>
+  def newProject(): Action[JsValue] = Action.async(parse.json) { request =>
     println("Register new project request accepted ")
-    def createProject(newProject: NewWeddingProjectMessage): Future[Result] =
-      projectsApi.addNewWeddingEventProject(newProject) match {
+    def createProject(newProject: NewProjectMessage): Future[Result] =
+      projectsApi.addNewProject(newProject) match {
         case Right(projectId) =>
           logForSuccess(projectId.toString)
           Future.successful(successResponseWithId(CREATED, projectId, Seq(s"Successfully created project ${projectId}")))
@@ -35,7 +35,7 @@ class ProjectsController  @Inject() (dbApi: DBApi, cc: ControllerComponents, ws:
           Future.successful(errorResponse(FOUND, Seq(s"Error: $errMsg")))
       }
 
-    request.body.validate[NewWeddingProjectMessage].fold(
+    request.body.validate[NewProjectMessage].fold(
       errors => badRequest,
       payload => createProject(payload)
     )
