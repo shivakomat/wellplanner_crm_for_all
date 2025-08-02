@@ -1,4 +1,4 @@
-name := "well-planner"
+name := "simple-crm"
 
 version := "1.0"
 
