@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/well-planner -Dconfig.resource=application.prod.conf -Dplay.http.secret.key=${PLAY_SECRET} -Dhttp.port=${PORT}
+web: target/universal/stage/bin/simple-crm -Dconfig.resource=application.prod.conf -Dplay.http.secret.key=${PLAY_SECRET} -Dauth0.clientId=${AUTH0_CLIENT_ID} -Dauth0.clientSecret=${AUTH0_CLIENT_SECRET} -Dhttp.port=${PORT}
