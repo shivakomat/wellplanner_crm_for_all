@@ -174,23 +174,23 @@ app.directive('tooltip', function(){
 });
 
 // PROD Constants
-// app.constant('config', {
-//         appHost: 'https://well-planner-248f4a7d862e.herokuapp.com',
-//         appAngularAssets: 'https://well-planner-248f4a7d862e.herokuapp.com/assets/javascripts/angular/'
-// });
-
-
 app.constant('config', {
-        appHost: 'http://localhost:9000',
-        appAngularAssets: 'http://localhost:9000/assets/javascripts/angular/'
+        appHost: 'https://simple-crm-5528099374a3.herokuapp.com',
+        appAngularAssets: 'https://simple-crm-5528099374a3.herokuapp.com/assets/javascripts/angular/'
 });
 
 
-// Production base URL
-// var baseUrl = "https://well-planner-248f4a7d862e.herokuapp.com/assets/javascripts/angular";
+// app.constant('config', {
+//         appHost: 'http://localhost:9000',
+//         appAngularAssets: 'http://localhost:9000/assets/javascripts/angular/'
+// });
 
-// Dev Base URL
-var baseUrl = "http://localhost:9000/assets/javascripts/angular";
+
+// Production base URL
+var baseUrl = "https://simple-crm-5528099374a3.herokuapp.com/assets/javascripts/angular";
+
+// // Dev Base URL
+// var baseUrl = "http://localhost:9000/assets/javascripts/angular";
 
 app.constant('templates', {
         newProjectModal:  baseUrl + "/newProjectModal.html",
