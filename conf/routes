@@ -104,6 +104,7 @@ DELETE /businesses/:businessId/vendors/:vendorId        controllers.VendorContac
 GET /businesses/:businessId/projects/:projectId/info                                            controllers.ProjectsController.getProjectById(projectId: Int, businessId: Int)
 
 GET /businesses/:businessId/projects/:projectId/tasks                                           controllers.TasksController.tasks(businessId: Int, projectId: Int)
+GET /businesses/:businessId/tasks                                                   controllers.TasksController.businessTasks(businessId: Int)
 
 GET /businesses/:businessId/projects/:projectId/tasks/:taskId/taskItems                         controllers.TasksController.taskItems(businessId: Int, projectId: Int, taskId: Int)
 

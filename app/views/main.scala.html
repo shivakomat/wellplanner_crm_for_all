@@ -327,16 +327,16 @@
                             </a>
                         </li>
 
-@*                        @if(activeMenuItem == "invoices") {*@
-@*                            <li class="active">*@
-@*                        } else {*@
-@*                            <li>*@
-@*                        }*@
-@*                            <a href="/pages/invoices">*@
-@*                                <i class="nc-icon nc-badge"></i>*@
-@*                                <p>Invoices</p>*@
-@*                            </a>*@
-@*                        </li>*@
+@if(activeMenuItem == "invoices") {
+    <li class="active">
+} else {
+    <li>
+}
+    <a href="/pages/invoices">
+        <i class="nc-icon nc-credit-card"></i>
+        <p>Invoices</p>
+    </a>
+</li>
 
 @*                        @if(activeMenuItem == "calendar") {*@
 @*                            <li class="active">*@
