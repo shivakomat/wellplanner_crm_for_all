@@ -1,12 +1,15 @@
 package model.api.projects
 
 import model.dataModels.{Task, TaskComment, TaskItem}
+import model.databases.ProjectsDbFacade
 import model.databases.{TaskCommentsDbFacade, TasksDbFacade}
 import model.tools.DateTimeNow
 import play.api.db.DBApi
 import play.api.libs.ws.WSClient
 
 class ProjectTasksAPI(dbApi: DBApi, ws: WSClient) {
+
+  private val projectsDb = new ProjectsDbFacade(dbApi)
 
   private val tasksListDb = new TasksDbFacade(dbApi)
   private val tasksCommentsDb = new TaskCommentsDbFacade(dbApi)
@@ -92,6 +95,15 @@ class ProjectTasksAPI(dbApi: DBApi, ws: WSClient) {
   def deleteTask(taskId: Long, projectId: Long, businessId: Long): Seq[TaskList] = {
     val rowsDeleted = tasksListDb.deleteTask(taskId,projectId, businessId)
     this.allTasks(projectId, businessId)
+  }
+
+  def tasksByBusiness(businessId: Long): Seq[BusinessTasks] = {
+    val projects = projectsDb.listByBusiness(businessId.toInt)
+    projects.map { project =>
+      val projId = project.id.getOrElse(0)
+      val tl = allTasks(projId, businessId)
+      BusinessTasks(project, tl)
+    }
   }
 
   def deleteTaskItem(taskItemId: Long, taskId: Long, projectId: Long, businessId: Long): Seq[TaskItem] = {

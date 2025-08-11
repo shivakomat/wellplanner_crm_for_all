@@ -2,7 +2,7 @@ package controllers.util
 
 import model.api.businesses.AdminSignUpMessage
 import model.api.clients.{ClientLoginMessage, ClientMessage, NewClientMessage}
-import model.api.projects.{BudgetBreakdownList, NewProjectMessage, SubBreakDownWithPayments, TaskList, TimelineItemsList}
+import model.api.projects.{BudgetBreakdownList, NewProjectMessage, SubBreakDownWithPayments, TaskList, TimelineItemsList, BusinessTasks}
 import model.api.users.UserMessage
 import model.dataModels._
 import org.joda.time.DateTime
@@ -27,11 +27,12 @@ object JsonFormats {
   implicit val taskItemFormat = Json.format[TaskItem]
   implicit val taskCommentsFormat= Json.format[TaskComment]
   implicit val taskListFormat = Json.format[TaskList]
+  implicit val projectsFormat = Json.format[Project]
+  implicit val businessTasksFormat = Json.format[BusinessTasks]
   implicit val paymentFormat = Json.format[Payment]
   implicit val budgetBreakdownsFormat = Json.format[BudgetBreakdowns]
   implicit val subBreakDownWithPaymentsFormat = Json.format[SubBreakDownWithPayments]
   implicit val budgetBreakdownListFormat = Json.format[BudgetBreakdownList]
-  implicit val projectsFormat = Json.format[Project]
   implicit val teamMemberFormat = Json.format[TeamMember]
   implicit val clientMessageFormat = Json.format[ClientMessage]
   implicit val timelineItemFormat = Json.format[TimelineItem]

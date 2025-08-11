@@ -37,6 +37,13 @@ class ProjectsDbFacade @Inject() (dbApi: DBApi) extends PostgresDatabase(dbApi) 
     }
 
 
+  def listByBusiness(businessId: Int): Seq[Project] =
+    db.withConnection { implicit connection =>
+      SQL("select * from projects where business_id = {businessId} and is_deleted = false")
+        .on("businessId" -> businessId)
+        .as(parser.*)
+    }
+
   def list(): Seq[Project] =
     db.withConnection { implicit connection =>
       SQL("select * from projects where is_deleted = false").as(parser.*)

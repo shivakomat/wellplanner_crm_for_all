@@ -100,6 +100,10 @@ class TasksController @Inject() (dbApi: DBApi, cc: ControllerComponents, ws: WSC
     successResponse(OK, Json.toJson(tasksApi.allTasks(projectId, businessId)), Seq("Successfully processed"))
   }
 
+  def businessTasks(businessId: Int) = Action {
+    successResponse(OK, Json.toJson(tasksApi.tasksByBusiness(businessId)), Seq("Successfully processed"))
+  }
+
   def taskItems(taskId: Int, businessId: Int, projectId: Int) = Action {
     successResponse(OK, Json.toJson(tasksApi.taskItemsByTask(projectId, businessId, taskId)), Seq("Successfully processed"))
   }
