@@ -3088,3 +3088,48 @@ INFO: Unsupported notification method: $/setTrace
 2025.08.02 00:09:55 INFO  no build target found for /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/app/model/api/projects/ProjectsApi.scala. Using presentation compiler with project's scala-library version: 2.13.16
 2025.08.02 00:32:52 INFO  no build target found for /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/app/model/api/projects/ProjectsApi.scala. Using presentation compiler with project's scala-library version: 2.13.16
 2025.08.02 00:32:52 INFO  no build target found for /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/app/model/api/clients/ClientsApi.scala. Using presentation compiler with project's scala-library version: 2.13.16
+2025.08.10 19:11:35 INFO  Started: Metals version 1.6.2 in folders '/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm' for client Windsurf 1.99.3.
+2025.08.10 19:11:35 INFO  Attempting to connect to the build server...
+2025.08.10 19:11:35 INFO  No running Bloop server found, starting one.
+2025.08.10 19:11:35 INFO  Starting compilation server
+2025.08.10 19:11:37 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:11:38 INFO  Attempting to connect to the build server...
+2025.08.10 19:11:38 INFO  Found a Bloop server running
+2025.08.10 19:11:38 INFO  Attempting to connect to the build server...
+2025.08.10 19:11:38 INFO  Found a Bloop server running
+2025.08.10 19:11:38 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:11:38 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:11:38 INFO  time: Connected to build server in 2.85s
+2025.08.10 19:11:38 INFO  Connected to Build server: Bloop v2.0.13
+2025.08.10 19:11:38 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
+2025.08.10 19:11:41 INFO  time: indexed workspace in 3.46s
+2025.08.10 19:16:17 INFO  Started: Metals version 1.6.2 in folders '/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm' for client Windsurf 1.99.3.
+2025.08.10 19:16:18 INFO  Attempting to connect to the build server...
+2025.08.10 19:16:18 INFO  No running Bloop server found, starting one.
+2025.08.10 19:16:18 INFO  Starting compilation server
+2025.08.10 19:16:19 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:16:20 INFO  Attempting to connect to the build server...
+2025.08.10 19:16:20 INFO  Found a Bloop server running
+2025.08.10 19:16:20 INFO  Attempting to connect to the build server...
+2025.08.10 19:16:20 INFO  Found a Bloop server running
+2025.08.10 19:16:20 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:16:20 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:16:20 INFO  time: Connected to build server in 2.59s
+2025.08.10 19:16:21 INFO  Connected to Build server: Bloop v2.0.13
+2025.08.10 19:16:21 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
+2025.08.10 19:16:23 INFO  time: indexed workspace in 3.18s
+2025.08.10 19:21:22 INFO  Started: Metals version 1.6.2 in folders '/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm' for client Windsurf 1.99.3.
+2025.08.10 19:21:22 INFO  Attempting to connect to the build server...
+2025.08.10 19:21:22 INFO  No running Bloop server found, starting one.
+2025.08.10 19:21:22 INFO  Starting compilation server
+2025.08.10 19:21:23 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:21:25 INFO  Attempting to connect to the build server...
+2025.08.10 19:21:25 INFO  Found a Bloop server running
+2025.08.10 19:21:25 INFO  Attempting to connect to the build server...
+2025.08.10 19:21:25 INFO  Found a Bloop server running
+2025.08.10 19:21:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:21:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:21:25 INFO  time: Connected to build server in 2.83s
+2025.08.10 19:21:25 INFO  Connected to Build server: Bloop v2.0.13
+2025.08.10 19:21:25 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
+2025.08.10 19:21:28 INFO  time: indexed workspace in 3.15s
