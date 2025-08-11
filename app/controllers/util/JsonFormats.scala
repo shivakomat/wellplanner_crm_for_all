@@ -22,6 +22,7 @@ object JsonFormats {
   implicit val clientFormat = Json.format[Client]
   implicit val vendorContactFormat = Json.format[VendorContact]
   implicit val vendorManageFormat = Json.format[VendorManage]
+  implicit val contactFormat = Json.format[Contact]
   implicit val taskFormat = Json.format[Task]
   implicit val taskItemFormat = Json.format[TaskItem]
   implicit val taskCommentsFormat= Json.format[TaskComment]

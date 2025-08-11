@@ -1,0 +1,89 @@
+@(message: String, businessId: Int)
+
+@main("Well Planner", "contacts", "Manage & Track Contacts", businessId) {
+    <!-- Contacts AngularJS page -->
+    <div class="content" data-ng-controller="contactsController as controller" data-ng-init="controller.getAllContacts(@businessId)">
+
+        <!-- Edit Contact Modal -->
+        <data-edit-contact-modal data-contacts="controller.contacts" data-current-contact="controller.currentContact" data-business-id=@businessId></data-edit-contact-modal>
+
+        <!-- New Contact Modal -->
+        <data-new-contact-modal data-contacts="controller.contacts" data-business-id=@businessId></data-new-contact-modal>
+
+        <div class="row">
+            <div class="col-md-8">
+                <button type="button" rel="tooltip" data-original-title="Add New Contact" class="btn btn-default" data-toggle="modal" data-id="@businessId" data-target="#newContact" data-ng-click="controller.newItem()" tooltip>Add New Contact</button>
+            </div>
+            <div class="col-md-4 pull-right">
+                <div class="input-group no-border">
+                    <input type="text" value="" class="form-control" placeholder="Search..." ng-model="searchText">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <i class="nc-icon nc-zoom-split"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr data-ng-if="controller.showNewItem===false">
+                                    <th class="text-center"></th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Phone</th>
+                                    <th class="text-center">Email</th>
+                                    <th class="text-center">Notes</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                                <tr data-ng-if="controller.showNewItem">
+                                    <th class="text-center"></th>
+                                    <th class="text-center">Name *</th>
+                                    <th class="text-center">Phone *</th>
+                                    <th class="text-center">Email *</th>
+                                    <th class="text-center">Notes</th>
+                                    <th class="text-center"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-ng-if="controller.showNewItem">
+                                    <th class="text-center"></th>
+                                    <td class="text-center"><input type="text" style="text-align:center;" class="form-control" data-ng-model="controller.formData.name"></td>
+                                    <td class="text-center"><phonenumber-directive model='controller.formData.phone'></phonenumber-directive></td>
+                                    <td class="text-center"><input type="email" style="text-align:center;" class="form-control" data-ng-model="controller.formData.email"></td>
+                                    <td class="text-center"><textarea rows="2" style="text-align:center; width:100%;" class="form-control" data-ng-model="controller.formData.notes"></textarea></td>
+                                    <td class="td-actions text-center">
+                                        <button class="btn btn-success" data-ng-click="controller.saveItem(@businessId)">
+                                            <span class="btn-label"><i class="nc-icon nc-check-2"></i></span>
+                                        </button>
+                                        <button class="btn btn-danger" data-ng-click="controller.cancelItem()"><i class="nc-icon nc-scissors"></i></button>
+                                    </td>
+                                </tr>
+                                <tr data-ng-repeat="contact in controller.contacts | filter:searchText">
+                                    <th class="text-center"></th>
+                                    <td class="text-center">{{contact.name}}</td>
+                                    <td class="text-center">{{contact.phone | phonenumber}}</td>
+                                    <td class="text-center">{{contact.email}}</td>
+                                    <td class="text-center">{{contact.notes}}</td>
+                                    <td class="td-actions text-center">
+                                        <button class="btn btn-warning" rel="tooltip" data-original-title="Edit Contact" data-toggle="modal" data-target="#editContactModal" data-ng-click="controller.setCurrentContact(contact)" tooltip>
+                                            <span class="btn-label"><i class="nc-icon nc-ruler-pencil"></i></span>
+                                        </button>
+                                        <button class="btn btn-danger" rel="tooltip" data-original-title="Delete Contact" data-ng-click="controller.removeContact(@businessId, contact.id)" tooltip>
+                                            <i class="nc-icon nc-scissors"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}

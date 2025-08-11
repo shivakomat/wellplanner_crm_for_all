@@ -1,0 +1,52 @@
+<div class="card" ng-controller="contactsController as contactsCtrl">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h4 class="card-title mb-0">Contacts</h4>
+        <button class="btn btn-primary btn-sm" ng-click="contactsCtrl.newItem()" tooltip data-original-title="Add New Contact">Add Contact</button>
+    </div>
+    <div class="card-body">
+    <h2>Contacts</h2>
+
+    <button class="btn btn-primary" ng-click="contactsCtrl.newItem()">New Contact</button>
+    <br><br>
+    <!-- Inline New Contact Form -->
+    <div ng-show="contactsCtrl.showNewItem" class="panel panel-default">
+        <div class="panel-heading">Add Contact</div>
+        <div class="panel-body">
+            <form class="form-inline" novalidate>
+                <input type="text" class="form-control" placeholder="Name" ng-model="contactsCtrl.formData.name">
+                <input type="text" class="form-control" placeholder="Phone" ng-model="contactsCtrl.formData.phone" data-phone-number-format>
+                <input type="email" class="form-control" placeholder="Email" ng-model="contactsCtrl.formData.email">
+                <input type="text" class="form-control" placeholder="Notes" ng-model="contactsCtrl.formData.notes">
+                <button class="btn btn-success" ng-click="contactsCtrl.saveItem(currentBusinessId)">Save</button>
+                <button class="btn btn-default" ng-click="contactsCtrl.cancelItem()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contacts Table -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="c in contactsCtrl.contacts">
+                <td>{{c.name}}</td>
+                <td>{{c.phone | phonenumber}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.notes}}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary" ng-click="contactsCtrl.setCurrentContact(c)" data-toggle="modal" data-target="#editContactModal">Edit</button>
+                    <button class="btn btn-sm btn-danger" ng-click="contactsCtrl.removeContact(currentBusinessId, c.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+            </table>
+    </div>
+</div
+</div>

@@ -305,6 +305,17 @@
                             </a>
                         </li>
 
+                    @if(activeMenuItem == "contacts") {
+                        <li class="active">
+                    } else {
+                        <li>
+                    }
+                            <a href="/pages/contacts/@businessId">
+                                <i class="nc-icon nc-badge"></i>
+                                <p>Contacts</p>
+                            </a>
+                        </li>
+
 @*                        @if(activeMenuItem == "invoices") {*@
 @*                            <li class="active">*@
 @*                        } else {*@
@@ -803,8 +814,11 @@
         <script src="@routes.Assets.versioned("javascripts/angular/signUpController.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/angular/clientsFactory.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/angular/clientsController.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/contactsFactory.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/contactsController.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/angular/vendorContactsFactory.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/angular/vendorContactsController.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angular/editContactModal.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/angular/projectsFactory.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/angular/newProjectModalDirective.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/angular/projectsController.js")"></script>
