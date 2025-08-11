@@ -316,6 +316,17 @@
                             </a>
                         </li>
 
+                        @if(activeMenuItem == "tasks") {
+                            <li class="active">
+                        } else {
+                            <li>
+                        }
+                            <a href="/pages/tasks/@businessId">
+                                <i class="nc-icon nc-bullet-list-67"></i>
+                                <p>Tasks</p>
+                            </a>
+                        </li>
+
 @*                        @if(activeMenuItem == "invoices") {*@
 @*                            <li class="active">*@
 @*                        } else {*@

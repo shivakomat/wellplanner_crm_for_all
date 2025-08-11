@@ -29,6 +29,7 @@ GET     /pages/client-portal/:businessId/projects/:projectId      controllers.Ho
 GET     /pages/client-portal/:businessId/projects/:projectId/budget   controllers.HomeController.clientPortalBudgetPage(projectId: Int, businessId: Int)
 
 GET     /pages/contacts/:businessId            controllers.HomeController.contactsPage(businessId: Int)
+GET     /pages/tasks/:businessId               controllers.HomeController.tasksPage(businessId: Int)
 GET     /pages/customers/:businessId            controllers.HomeController.customerPage(businessId: Int)
 GET     /pages/dashboard/:businessId           controllers.HomeController.mainDashboard(businessId: Int)
 GET     /pages/vendors/:businessId             controllers.HomeController.vendors(businessId: Int)
