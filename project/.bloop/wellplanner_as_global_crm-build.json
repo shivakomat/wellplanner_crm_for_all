@@ -18,7 +18,7 @@
         "classpath": [
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/sbt/1.9.7/sbt-1.9.7.jar",
             "/Users/shivakomatreddy/.sbt/boot/scala-2.12.18/lib/scala-library.jar",
-            "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.10/sbt-bloop_2.12_1.0-2.0.10.jar",
+            "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.13/sbt-bloop_2.12_1.0-2.0.13.jar",
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/sbt-plugin_2.12_1.0/2.9.0/sbt-plugin_2.12_1.0-2.9.0.jar",
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/github/sbt/sbt-native-packager_2.12_1.0/1.10.0/sbt-native-packager_2.12_1.0-1.10.0.jar",
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/main_2.12/1.9.7/main_2.12-1.9.7.jar",
@@ -268,7 +268,7 @@
             },
             "classpath": [
                 "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/.bloop/wellplanner_as_global_crm-build/scala-2.12/sbt-1.0/classes",
-                "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.10/sbt-bloop_2.12_1.0-2.0.10.jar",
+                "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.13/sbt-bloop_2.12_1.0-2.0.13.jar",
                 "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/sbt-plugin_2.12_1.0/2.9.0/sbt-plugin_2.12_1.0-2.9.0.jar",
                 "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/github/sbt/sbt-native-packager_2.12_1.0/1.10.0/sbt-native-packager_2.12_1.0-1.10.0.jar",
                 "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.3.2/bloop-config_2.12-2.3.2.jar",
@@ -328,17 +328,17 @@
                 {
                     "organization": "ch.epfl.scala",
                     "name": "sbt-bloop",
-                    "version": "2.0.10",
+                    "version": "2.0.13",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "sbt-bloop",
-                            "path": "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.10/sbt-bloop_2.12_1.0-2.0.10.jar"
+                            "path": "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.13/sbt-bloop_2.12_1.0-2.0.13.jar"
                         },
                         {
                             "name": "sbt-bloop",
                             "classifier": "sources",
-                            "path": "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.10/sbt-bloop_2.12_1.0-2.0.10-sources.jar"
+                            "path": "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.13/sbt-bloop_2.12_1.0-2.0.13-sources.jar"
                         }
                     ]
                 },

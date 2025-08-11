@@ -2,15 +2,15 @@
     "version": "1.4.0",
     "project": {
         "name": "wellplanner",
-        "directory": "/Users/shivakomatreddy/IdeaProjects/WellPlanner",
-        "workspaceDir": "/Users/shivakomatreddy/IdeaProjects/WellPlanner",
+        "directory": "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm",
+        "workspaceDir": "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm",
         "sources": [
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/app",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/app-2.13",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/app-2",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/scala-2.13/src_managed/main",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/scala-2.13/routes/main",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/scala-2.13/twirl/main"
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/app",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/app-2.13",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/app-2",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/scala-2.13/src_managed/main",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/scala-2.13/routes/main",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/scala-2.13/twirl/main"
         ],
         "dependencies": [
             
@@ -125,11 +125,11 @@
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/osgi/org.osgi.util.function/1.0.0/org.osgi.util.function-1.0.0.jar",
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/osgi/org.osgi.util.promise/1.0.0/org.osgi.util.promise-1.0.0.jar"
         ],
-        "out": "/Users/shivakomatreddy/IdeaProjects/WellPlanner/.bloop/wellplanner",
-        "classesDir": "/Users/shivakomatreddy/IdeaProjects/WellPlanner/.bloop/wellplanner/scala-2.13/classes",
+        "out": "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.bloop/wellplanner",
+        "classesDir": "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.bloop/wellplanner/scala-2.13/classes",
         "resources": [
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/conf",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/scala-2.13/resource_managed/main"
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/conf",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/scala-2.13/resource_managed/main"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -232,7 +232,7 @@
             "config": {
                 "home": "/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home",
                 "options": [
-                    "-Duser.dir=/Users/shivakomatreddy/IdeaProjects/WellPlanner"
+                    "-Duser.dir=/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm"
                 ]
             },
             "mainClass": [
@@ -241,12 +241,12 @@
             "runtimeConfig": {
                 "home": "/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home",
                 "options": [
-                    "-Duser.dir=/Users/shivakomatreddy/IdeaProjects/WellPlanner",
+                    "-Duser.dir=/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm",
                     "-Dplay.fileWatchService=noop"
                 ]
             },
             "classpath": [
-                "/Users/shivakomatreddy/IdeaProjects/WellPlanner/.bloop/wellplanner/scala-2.13/classes",
+                "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.bloop/wellplanner/scala-2.13/classes",
                 "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar",
                 "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/twirl-api_2.13/1.6.2/twirl-api_2.13-1.6.2.jar",
                 "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/play-server_2.13/2.9.0/play-server_2.13-2.9.0.jar",

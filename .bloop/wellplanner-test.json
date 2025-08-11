@@ -2,21 +2,21 @@
     "version": "1.4.0",
     "project": {
         "name": "wellplanner-test",
-        "directory": "/Users/shivakomatreddy/IdeaProjects/WellPlanner",
-        "workspaceDir": "/Users/shivakomatreddy/IdeaProjects/WellPlanner",
+        "directory": "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm",
+        "workspaceDir": "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm",
         "sources": [
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/test",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/test-2.13",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/test-2",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/scala-2.13/src_managed/test",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/scala-2.13/routes/test",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/scala-2.13/twirl/test"
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/test",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/test-2.13",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/test-2",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/scala-2.13/src_managed/test",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/scala-2.13/routes/test",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/scala-2.13/twirl/test"
         ],
         "dependencies": [
             "wellplanner"
         ],
         "classpath": [
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/.bloop/wellplanner/scala-2.13/classes",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.bloop/wellplanner/scala-2.13/classes",
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar",
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/twirl-api_2.13/1.6.2/twirl-api_2.13-1.6.2.jar",
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/play-server_2.13/2.9.0/play-server_2.13-2.9.0.jar",
@@ -216,12 +216,12 @@
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/jetty/jetty-http/9.4.50.v20221201/jetty-http-9.4.50.v20221201.jar",
             "/Users/shivakomatreddy/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.50.v20221201/websocket-api-9.4.50.v20221201.jar"
         ],
-        "out": "/Users/shivakomatreddy/IdeaProjects/WellPlanner/.bloop/wellplanner",
-        "classesDir": "/Users/shivakomatreddy/IdeaProjects/WellPlanner/.bloop/wellplanner/scala-2.13/test-classes",
+        "out": "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.bloop/wellplanner",
+        "classesDir": "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.bloop/wellplanner/scala-2.13/test-classes",
         "resources": [
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/test/resources",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/web/public/test",
-            "/Users/shivakomatreddy/IdeaProjects/WellPlanner/target/scala-2.13/resource_managed/test"
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/test/resources",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/web/public/test",
+            "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/target/scala-2.13/resource_managed/test"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -347,7 +347,7 @@
             "config": {
                 "home": "/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home",
                 "options": [
-                    "-Duser.dir=/Users/shivakomatreddy/IdeaProjects/WellPlanner",
+                    "-Duser.dir=/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm",
                     "-Dplay.fileWatchService=noop"
                 ]
             },

@@ -3133,3 +3133,158 @@ INFO: Unsupported notification method: $/setTrace
 2025.08.10 19:21:25 INFO  Connected to Build server: Bloop v2.0.13
 2025.08.10 19:21:25 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
 2025.08.10 19:21:28 INFO  time: indexed workspace in 3.15s
+2025.08.10 19:35:02 INFO  Started: Metals version 1.6.2 in folders '/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm' for client Windsurf 1.99.3.
+2025.08.10 19:35:02 INFO  Attempting to connect to the build server...
+2025.08.10 19:35:02 INFO  No running Bloop server found, starting one.
+2025.08.10 19:35:02 INFO  Starting compilation server
+2025.08.10 19:35:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:35:05 INFO  Attempting to connect to the build server...
+2025.08.10 19:35:05 INFO  Found a Bloop server running
+2025.08.10 19:35:05 INFO  Attempting to connect to the build server...
+2025.08.10 19:35:05 INFO  Found a Bloop server running
+2025.08.10 19:35:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:35:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:35:05 INFO  time: Connected to build server in 2.9s
+2025.08.10 19:35:05 INFO  Connected to Build server: Bloop v2.0.13
+2025.08.10 19:35:05 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
+2025.08.10 19:35:08 INFO  time: indexed workspace in 3.27s
+2025.08.10 19:37:30 INFO  Started: Metals version 1.6.2 in folders '/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm' for client Windsurf 1.99.3.
+2025.08.10 19:37:31 INFO  Attempting to connect to the build server...
+2025.08.10 19:37:31 INFO  No running Bloop server found, starting one.
+2025.08.10 19:37:31 INFO  Starting compilation server
+2025.08.10 19:37:32 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:37:33 INFO  Attempting to connect to the build server...
+2025.08.10 19:37:33 INFO  Found a Bloop server running
+2025.08.10 19:37:33 INFO  Attempting to connect to the build server...
+2025.08.10 19:37:33 INFO  Found a Bloop server running
+2025.08.10 19:37:33 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:37:33 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:37:33 INFO  time: Connected to build server in 2.71s
+2025.08.10 19:37:33 INFO  Connected to Build server: Bloop v2.0.13
+2025.08.10 19:37:34 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
+2025.08.10 19:37:36 INFO  time: indexed workspace in 3.04s
+2025.08.10 19:44:53 INFO  time: code lens generation in 1.48s
+2025.08.10 19:44:53 INFO  time: code lens generation in 1.33s
+2025.08.10 19:45:06 INFO  running '/opt/homebrew/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2025.08.10 19:45:06 INFO  no build target found for /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/metals.sbt. Using presentation compiler with project's scala-library version: 2.13.16
+2025.08.10 19:45:06 WARN  no build target for: /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/metals.sbt
+2025.08.10 19:45:07 INFO  [info] welcome to sbt 1.9.7 (Homebrew Java 17.0.13)
+2025.08.10 19:45:07 INFO  [info] loading settings for project wellplanner_as_global_crm-build-build-build from metals.sbt ...
+2025.08.10 19:45:08 INFO  [info] loading project definition from /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/project
+2025.08.10 19:45:08 INFO  [info] loading settings for project wellplanner_as_global_crm-build-build from metals.sbt ...
+2025.08.10 19:45:08 INFO  [info] loading project definition from /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project
+2025.08.10 19:45:10 INFO  [success] Generated .bloop/wellplanner_as_global_crm-build-build.json
+2025.08.10 19:45:10 INFO  [success] Total time: 1 s, completed Aug 10, 2025, 7:45:10 PM
+2025.08.10 19:45:10 INFO  [info] loading settings for project wellplanner_as_global_crm-build from metals.sbt,plugins.sbt ...
+2025.08.10 19:45:10 INFO  [info] loading project definition from /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project
+2025.08.10 19:45:11 INFO  [success] Total time: 1 s, completed Aug 10, 2025, 7:45:11 PM
+2025.08.10 19:45:12 ERROR /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/build.sbt:47: warning: method in in trait ScopingSetting is deprecated (since 1.5.0): `in` is deprecated; migrate to slash syntax - https://www.scala-sbt.org/1.x/docs/Migrating-from-sbt-013x.html#slash
+2025.08.10 19:45:12 ERROR unmanagedResourceDirectories in Test += baseDirectory.value / "target/web/public/test"
+2025.08.10 19:45:12 ERROR                              ^
+2025.08.10 19:45:12 ERROR /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/build.sbt:50: warning: method in in trait ScopingSetting is deprecated (since 1.5.0): `in` is deprecated; migrate to slash syntax - https://www.scala-sbt.org/1.x/docs/Migrating-from-sbt-013x.html#slash
+2025.08.10 19:45:12 ERROR javaOptions in Runtime += "-Dplay.fileWatchService=noop"
+2025.08.10 19:45:12 ERROR             ^
+2025.08.10 19:45:12 INFO  [info] loading settings for project wellplanner from build.sbt ...
+2025.08.10 19:45:12 INFO  [info]   __              __
+2025.08.10 19:45:12 INFO  [info]   \ \     ____   / /____ _ __  __
+2025.08.10 19:45:12 INFO  [info]    \ \   / __ \ / // __ `// / / /
+2025.08.10 19:45:12 INFO  [info]    / /  / /_/ // // /_/ // /_/ /
+2025.08.10 19:45:12 INFO  [info]   /_/  / .___//_/ \__,_/ \__, /
+2025.08.10 19:45:12 INFO  [info]       /_/               /____/
+2025.08.10 19:45:12 INFO  [info] 
+2025.08.10 19:45:12 INFO  [info] Version 2.9.0 running Java 17.0.13
+2025.08.10 19:45:12 INFO  [info] 
+2025.08.10 19:45:12 INFO  [info] Play is run entirely by the community. Please consider contributing and/or donating:
+2025.08.10 19:45:12 INFO  [info] https://www.playframework.com/sponsors
+2025.08.10 19:45:12 INFO  [info] 
+2025.08.10 19:45:14 INFO  [success] Generated .bloop/wellplanner.json
+2025.08.10 19:45:14 INFO  [success] Generated .bloop/wellplanner-test.json
+2025.08.10 19:45:14 INFO  [success] Total time: 1 s, completed Aug 10, 2025, 7:45:14 PM
+2025.08.10 19:45:14 INFO  time: ran 'sbt bloopInstall' in 7.93s
+2025.08.10 19:45:14 INFO  Disconnecting from Bloop session...
+2025.08.10 19:45:14 INFO  Shut down connection with build server.
+2025.08.10 19:45:14 INFO  Shut down connection with build server.
+2025.08.10 19:45:14 INFO  Shut down connection with build server.
+2025.08.10 19:45:14 INFO  Attempting to connect to the build server...
+2025.08.10 19:45:14 INFO  Found a Bloop server running
+2025.08.10 19:45:14 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:45:15 INFO  Attempting to connect to the build server...
+2025.08.10 19:45:15 INFO  Found a Bloop server running
+2025.08.10 19:45:15 INFO  Attempting to connect to the build server...
+2025.08.10 19:45:15 INFO  Found a Bloop server running
+2025.08.10 19:45:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:45:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:45:15 INFO  time: Connected to build server in 1.22s
+2025.08.10 19:45:15 INFO  Connected to Build server: Bloop v2.0.13
+2025.08.10 19:45:17 INFO  time: indexed workspace in 1.76s
+Aug 10, 2025 7:45:17 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+2025.08.10 19:45:17 INFO  skipping build import with status 'Installed'
+2025.08.10 19:45:17 INFO  Created report: Optional[file:///Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/Main.scala]
+2025.08.10 19:45:17 INFO  java.lang.AssertionError: assertion failed: (List(Stamp(2023-10-22T20:54:19Z,57534,(dev=1000012,ino=23734135))),0) (full report at: "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/.reports/metals-full/2025-08-10/r_compiler-error_19-45-17-566.md")
+Aug 10, 2025 7:45:18 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+2025.08.10 19:45:18 INFO  Created report: Optional[file:///Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/build.sbt]
+2025.08.10 19:45:18 INFO  java.lang.AssertionError: assertion failed: (List(Stamp(2023-10-05T14:44:15Z,4656820,(dev=1000012,ino=23733859))),0) (full report at: "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/.reports/metals-full/2025-08-10/r_compiler-error_(wellplanner_5fas_5fglobal_5fcrm-build)_19-45-18-799.md")
+Aug 10, 2025 7:46:58 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+2025.08.10 19:46:58 INFO  Created report: Optional[file:///Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/build.sbt]
+2025.08.10 19:46:58 INFO  java.lang.AssertionError: assertion failed: (List(Stamp(2023-10-22T20:54:38Z,1157786,(dev=1000012,ino=23733887))),0) (full report at: "/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/.reports/metals-full/2025-08-10/r_compiler-error_(wellplanner_5fas_5fglobal_5fcrm-build)_19-46-58-860.md")
+Aug 10, 2025 7:46:58 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+2025.08.10 19:52:53 INFO  Started: Metals version 1.6.2 in folders '/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm' for client Windsurf 1.99.3.
+2025.08.10 19:52:53 INFO  no build target found for /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/build.sbt. Using presentation compiler with project's scala-library version: 3.3.6
+2025.08.10 19:52:54 INFO  Attempting to connect to the build server...
+2025.08.10 19:52:54 INFO  No running Bloop server found, starting one.
+2025.08.10 19:52:54 INFO  Starting compilation server
+2025.08.10 19:52:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:52:57 INFO  Attempting to connect to the build server...
+2025.08.10 19:52:57 INFO  Found a Bloop server running
+2025.08.10 19:52:57 INFO  Attempting to connect to the build server...
+2025.08.10 19:52:57 INFO  Found a Bloop server running
+2025.08.10 19:52:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:52:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/project/.metals/bsp.trace.json or /Users/shivakomatreddy/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.08.10 19:52:57 INFO  time: Connected to build server in 2.9s
+2025.08.10 19:52:57 INFO  Connected to Build server: Bloop v2.0.13
+2025.08.10 19:52:57 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
+2025.08.10 19:52:59 INFO  time: indexed workspace in 2.99s
+2025.08.10 19:53:02 INFO  time: code lens generation in 1.27s
+2025.08.10 19:53:02 INFO  time: code lens generation in 1.53s
+2025.08.10 19:54:14 INFO  compiling wellplanner (114 scala sources and 1 java source)
+2025.08.10 19:54:23 INFO  time: compiled wellplanner in 9.53s
+2025.08.10 19:54:23 INFO  compiling wellplanner (133 scala sources and 1 java source)
+2025.08.10 19:54:39 INFO  time: compiled wellplanner in 15s
+Aug 10, 2025 7:57:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "metals/didFocusTextDocument",
+  "params": [
+    "git:/Users/shivakomatreddy/IdeaProjects/WellPlanner_As_global_crm/build.sbt?%7B%22path%22%3A%22%2FUsers%2Fshivakomatreddy%2FIdeaProjects%2FWellPlanner_As_global_crm%2Fbuild.sbt%22%2C%22ref%22%3A%22%22%7D"
+  ]
+}
+java.nio.file.FileSystemNotFoundException: Provider "git" not installed
+	at java.base/java.nio.file.Path.of(Path.java:212)
+	at java.base/java.nio.file.Paths.get(Paths.java:98)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionURIMtags.toAbsolutePath(MtagsEnrichments.scala:130)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:190)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:787)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:784)
+	at scala.meta.internal.metals.WorkspaceLspService.didFocus(WorkspaceLspService.scala:786)
+	at scala.meta.metals.lsp.DelegatingScalaService.didFocus(DelegatingScalaService.scala:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
