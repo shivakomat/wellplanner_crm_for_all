@@ -241,6 +241,42 @@
 
     </head>
     <body class=""  data-ng-app="wellPlanner" data-ng-cloak>
+        <!-- Global Page Loader -->
+        <div id="page-loader">
+            <div class="lds-roller">
+                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+        </div>
+        <style>
+            #page-loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #f4f3ef;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2000;
+            }
+        </style>
+        <script>
+            (function() {
+                function hideLoader() {
+                    var pl = document.getElementById('page-loader');
+                    if (pl) { pl.style.display = 'none'; }
+                }
+                // Hide once DOM is ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', hideLoader);
+                } else {
+                    hideLoader();
+                }
+                // Also hide again after full load as a fallback
+                window.addEventListener('load', hideLoader);
+            })();
+        </script>
 
         <div class="wrapper">
             <div class="sidebar" data-color="white" data-active-color="danger">
