@@ -13,6 +13,7 @@ lazy val wellplanner = (project in file(".")).enablePlugins(PlayScala)
 
 // Modern, working resolvers
 resolvers ++= Seq(
+  "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/",
   "Akka Snapshot Repository" at "https://repo.akka.io/snapshots/"
 )
 
@@ -35,6 +36,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-core" % "10.2.10",
   "org.jsoup" % "jsoup" % "1.11.3",
   "com.typesafe.play" %% "play-json-joda" % "2.10.0",
+
+
   "com.github.jwt-scala" %% "jwt-play" % "9.4.4",
   "com.github.jwt-scala" %% "jwt-core" % "9.4.4",
   "com.auth0" % "jwks-rsa" % "0.6.1",

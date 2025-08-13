@@ -197,6 +197,10 @@ GET     /callback                   controllers.CallbackController.callback(code
 +nocsrf
 POST    /businesses/signUp                  controllers.BusinessController.registerNewBusiness()
 
+# Email notifications
++nocsrf
+POST    /emails/send                       controllers.EmailsController.sendEmail
+
 +nocsrf
 POST    /businesses/updateInfo              controllers.BusinessController.updateBusinessInfo()
 
