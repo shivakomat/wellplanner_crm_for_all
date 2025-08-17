@@ -40,6 +40,7 @@ libraryDependencies ++= Seq(
 
   "com.github.jwt-scala" %% "jwt-play" % "9.4.4",
   "com.github.jwt-scala" %% "jwt-core" % "9.4.4",
+  "com.typesafe.play" %% "play-ws" % playVersion,
   "com.auth0" % "jwks-rsa" % "0.6.1",
   "net.java.dev.jna" % "jna" % "5.13.0",
   "com.typesafe.play" %% "play" % playVersion

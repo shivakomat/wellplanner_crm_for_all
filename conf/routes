@@ -201,6 +201,19 @@ POST    /businesses/signUp                  controllers.BusinessController.regis
 +nocsrf
 POST    /emails/send                       controllers.EmailsController.sendEmail
 
+# Gmail API integration
+GET     /auth/gmail                        controllers.OAuthController.initiateGmailAuth
+GET     /oauth2callback                    controllers.OAuthController.handleCallback
++nocsrf
+POST    /auth/gmail/disconnect             controllers.OAuthController.disconnectGmail
+
+GET     /gmail/messages                    controllers.GmailController.listMessages
+GET     /gmail/messages/:id                controllers.GmailController.getMessage(id: String)
++nocsrf
+POST    /gmail/messages/send               controllers.GmailController.sendMessage
+GET     /gmail/profile                     controllers.GmailController.getUserProfile
+GET     /gmail/status                      controllers.GmailController.getConnectionStatus
+
 +nocsrf
 POST    /businesses/updateInfo              controllers.BusinessController.updateBusinessInfo()
 
