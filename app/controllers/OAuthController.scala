@@ -20,7 +20,9 @@ class OAuthController @Inject()(cc: ControllerComponents, ws: WSClient, config: 
   private val SCOPES = List(
     "https://www.googleapis.com/auth/gmail.readonly",
     "https://www.googleapis.com/auth/gmail.send",
-    "https://www.googleapis.com/auth/gmail.compose"
+    "https://www.googleapis.com/auth/gmail.compose",
+    "https://www.googleapis.com/auth/calendar",
+    "https://www.googleapis.com/auth/calendar.events"
   )
 
   def initiateGmailAuth = Action { request =>

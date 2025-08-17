@@ -214,6 +214,16 @@ POST    /gmail/messages/send               controllers.GmailController.sendMessa
 GET     /gmail/profile                     controllers.GmailController.getUserProfile
 GET     /gmail/status                      controllers.GmailController.getConnectionStatus
 
+# Google Calendar API integration
+GET     /calendar/events                   controllers.CalendarController.listEvents
+GET     /calendar/events/:id               controllers.CalendarController.getEvent(id: String)
++nocsrf
+POST    /calendar/events                   controllers.CalendarController.createEvent
++nocsrf
+POST    /calendar/events/:id/invitations   controllers.CalendarController.sendInvitations(id: String)
+GET     /calendar/calendars                controllers.CalendarController.listCalendars
+GET     /calendar/status                   controllers.CalendarController.getConnectionStatus
+
 +nocsrf
 POST    /businesses/updateInfo              controllers.BusinessController.updateBusinessInfo()
 
