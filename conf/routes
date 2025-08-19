@@ -288,5 +288,17 @@ GET     /api/documents/:docId                     controllers.ClientDocumentsCon
 +nocsrf
 DELETE  /api/documents/:docId                     controllers.ClientDocumentsController.delete(docId: Int)
 
+# Payment API Endpoints (Stripe Integration)
++nocsrf
+POST    /api/businesses/:businessId/payments/intents           controllers.PaymentController.createPaymentIntent(businessId: Int)
+GET     /api/businesses/:businessId/payments/intents/:intentId controllers.PaymentController.getPaymentIntent(businessId: Int, intentId: String)
++nocsrf
+POST    /api/businesses/:businessId/payments/process           controllers.PaymentController.processPayment(businessId: Int)
++nocsrf
+POST    /api/businesses/:businessId/customers                  controllers.PaymentController.createCustomer(businessId: Int)
+GET     /api/payments/config                                   controllers.PaymentController.getStripeConfig()
++nocsrf
+POST    /api/payments/webhook                                  controllers.PaymentController.stripeWebhook()
+
 # assets
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

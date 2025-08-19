@@ -36,8 +36,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-core" % "10.2.10",
   "org.jsoup" % "jsoup" % "1.11.3",
   "com.typesafe.play" %% "play-json-joda" % "2.10.0",
-
-
+  "com.stripe" % "stripe-java" % "22.30.0",
   "com.github.jwt-scala" %% "jwt-play" % "9.4.4",
   "com.github.jwt-scala" %% "jwt-core" % "9.4.4",
   "com.typesafe.play" %% "play-ws" % playVersion,

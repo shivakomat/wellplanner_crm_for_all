@@ -1,7 +1,7 @@
 import com.google.inject.AbstractModule
 import java.time.Clock
 
-import services.{ApplicationTimer, AtomicCounter, Counter}
+import services.{ApplicationTimer, AtomicCounter, Counter, StripeService, PaymentService}
 import databases.{IntakeFormsAPI, IntakeFormsAPIImpl}
 
 /**
@@ -16,7 +16,7 @@ import databases.{IntakeFormsAPI, IntakeFormsAPIImpl}
  */
 class Module extends AbstractModule {
 
-  override def configure() = {
+  override def configure(): Unit = {
     // Use the system clock as the default implementation of Clock
     bind(classOf[Clock]).toInstance(Clock.systemDefaultZone)
     // Ask Guice to create an instance of ApplicationTimer when the
@@ -24,8 +24,13 @@ class Module extends AbstractModule {
     bind(classOf[ApplicationTimer]).asEagerSingleton()
     // Set AtomicCounter as the implementation for Counter.
     bind(classOf[Counter]).to(classOf[AtomicCounter])
-    // Bind IntakeFormsAPI to its implementation
+    // Bind database API implementations
     bind(classOf[IntakeFormsAPI]).to(classOf[IntakeFormsAPIImpl])
-  }
+    // TODO: Add other API bindings when they are implemented
 
+    // Bind services
+    bind(classOf[StripeService]).asEagerSingleton()
+    bind(classOf[PaymentService]).asEagerSingleton()
+    // TODO: Add other service bindings when they are implemented
+  }
 }
