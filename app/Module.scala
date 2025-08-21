@@ -2,7 +2,6 @@ import com.google.inject.AbstractModule
 import java.time.Clock
 
 import services.{ApplicationTimer, AtomicCounter, Counter, StripeService, PaymentService}
-import databases.{IntakeFormsAPI, IntakeFormsAPIImpl}
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -24,8 +23,8 @@ class Module extends AbstractModule {
     bind(classOf[ApplicationTimer]).asEagerSingleton()
     // Set AtomicCounter as the implementation for Counter.
     bind(classOf[Counter]).to(classOf[AtomicCounter])
-    // Bind database API implementations
-    bind(classOf[IntakeFormsAPI]).to(classOf[IntakeFormsAPIImpl])
+    // TODO: Bind database API implementations when Database is properly configured
+    // bind(classOf[IntakeFormsAPI]).to(classOf[IntakeFormsAPIImpl])
     // TODO: Add other API bindings when they are implemented
 
     // Bind services

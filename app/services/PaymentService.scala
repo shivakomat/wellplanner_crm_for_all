@@ -2,13 +2,11 @@ package services
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
-import databases.PaymentAPI
 import play.api.libs.json._
 import java.time.LocalDateTime
 
 @Singleton
 class PaymentService @Inject()(
-  paymentAPI: PaymentAPI,
   stripeService: StripeService
 )(implicit ec: ExecutionContext) {
 

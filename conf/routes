@@ -224,22 +224,22 @@ POST    /calendar/events/:id/invitations   controllers.CalendarController.sendIn
 GET     /calendar/calendars                controllers.CalendarController.listCalendars
 GET     /calendar/status                   controllers.CalendarController.getConnectionStatus
 
-# Intake Forms API
-GET     /businesses/:businessId/forms                           controllers.IntakeFormsController.getFormsByBusiness(businessId: Long)
-GET     /businesses/:businessId/forms/:formId                   controllers.IntakeFormsController.getForm(businessId: Long, formId: Long)
-+nocsrf
-POST    /businesses/:businessId/forms                           controllers.IntakeFormsController.createForm(businessId: Long)
-+nocsrf
-PUT     /businesses/:businessId/forms/:formId                   controllers.IntakeFormsController.updateForm(businessId: Long, formId: Long)
-+nocsrf
-PATCH   /businesses/:businessId/forms/:formId/status            controllers.IntakeFormsController.updateFormStatus(businessId: Long, formId: Long)
-DELETE  /businesses/:businessId/forms/:formId                   controllers.IntakeFormsController.deleteForm(businessId: Long, formId: Long)
-GET     /businesses/:businessId/forms/:formId/responses         controllers.IntakeFormsController.getFormResponses(businessId: Long, formId: Long)
+# Intake Forms API (temporarily disabled due to missing IntakeFormsAPI binding)
+# GET     /businesses/:businessId/forms                           controllers.IntakeFormsController.getFormsByBusiness(businessId: Long)
+# GET     /businesses/:businessId/forms/:formId                   controllers.IntakeFormsController.getForm(businessId: Long, formId: Long)
+# +nocsrf
+# POST    /businesses/:businessId/forms                           controllers.IntakeFormsController.createForm(businessId: Long)
+# +nocsrf
+# PUT     /businesses/:businessId/forms/:formId                   controllers.IntakeFormsController.updateForm(businessId: Long, formId: Long)
+# +nocsrf
+# PATCH   /businesses/:businessId/forms/:formId/status            controllers.IntakeFormsController.updateFormStatus(businessId: Long, formId: Long)
+# DELETE  /businesses/:businessId/forms/:formId                   controllers.IntakeFormsController.deleteForm(businessId: Long, formId: Long)
+# GET     /businesses/:businessId/forms/:formId/responses         controllers.IntakeFormsController.getFormResponses(businessId: Long, formId: Long)
 
-# Public Form Endpoints (no authentication required)
-GET     /forms/:publicId                                        controllers.IntakeFormsController.getPublicForm(publicId: String)
-+nocsrf
-POST    /forms/:publicId/submit                                 controllers.IntakeFormsController.submitForm(publicId: String)
+# Public Form Endpoints (no authentication required) - temporarily disabled
+# GET     /forms/:publicId                                        controllers.IntakeFormsController.getPublicForm(publicId: String)
+# +nocsrf
+# POST    /forms/:publicId/submit                                 controllers.IntakeFormsController.submitForm(publicId: String)
 
 +nocsrf
 POST    /businesses/updateInfo              controllers.BusinessController.updateBusinessInfo()

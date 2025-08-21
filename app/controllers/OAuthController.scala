@@ -13,9 +13,9 @@ import java.nio.charset.StandardCharsets
 class OAuthController @Inject()(cc: ControllerComponents, ws: WSClient, config: Configuration)(implicit ec: ExecutionContext)
   extends AbstractController(cc) {
 
-  private val clientId = config.get[String]("google.oauth.client-id")
-  private val clientSecret = config.get[String]("google.oauth.client-secret")
-  private val redirectUri = config.get[String]("google.oauth.redirect-uri")
+  private val clientId = config.get[String]("google.oauth.clientId")
+  private val clientSecret = config.get[String]("google.oauth.clientSecret")
+  private val redirectUri = config.get[String]("google.oauth.redirectUri")
 
   private val SCOPES = List(
     "https://www.googleapis.com/auth/gmail.readonly",
