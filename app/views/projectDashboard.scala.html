@@ -2,7 +2,16 @@
 @(title: String, projectId: Int, businessId: Int)
 
 @projectMain("Project Dashboard", "project-dashboard", "Project Overview Dashboard", projectId, businessId) {
-    <div class="content" data-ng-controller="projectDashboardController as controller" data-ng-init="controller.init(@businessId, @projectId)">
+    
+    <!-- Project Dashboard Page Loader Overlay -->
+    <div id="project-dashboard-loader" data-ng-show="controller.isLoaded == false">
+        <div class="lds-roller">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="loader-text">Loading Dashboard</div>
+    </div>
+    
+    <div class="content" data-ng-controller="projectDashboardController as controller" data-ng-init="controller.init(@businessId, @projectId)" data-ng-show="controller.isLoaded">
         <div class="row">
             <div class="col-md-12 ml-auto mr-auto">
                 <div class="card card-user">

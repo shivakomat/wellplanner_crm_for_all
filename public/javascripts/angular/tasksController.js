@@ -27,6 +27,7 @@ app.controller('tasksController', function (TasksFactory, $http) {
     tasksController.currentSubTask = {};
     tasksController.subTaskItems = [];
     tasksController.currentTaskComments = [];
+    tasksController.isLoaded = false;
 
     function refresh(businessId, projectId) {
         allTasks(businessId, projectId);
@@ -112,8 +113,12 @@ app.controller('tasksController', function (TasksFactory, $http) {
         TasksFactory.allTasks(businessId, projectId,
             function mySuccess (response) {
                 tasksController.tasks = utils.formatDueDate(response.data.data);
+                tasksController.isLoaded = true;
             },
-            function myError (response) { console.log(response.statusText) }
+            function myError (response) { 
+                console.log(response.statusText);
+                tasksController.isLoaded = true; // Show content even on error
+            }
         )
     }
 });

@@ -1,17 +1,17 @@
 @(message: String, businessId: Int)
 
 @main("Well Planner", "projects", "Projects", businessId) {
+    <!-- Projects Page Loader Overlay -->
+    <div id="projects-page-loader" data-ng-show="controller.isLoaded == false">
+        <div class="lds-roller">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="loader-text">Loading Projects</div>
+    </div>
+    
     <div class="content" data-ng-controller="projectsController as controller" data-ng-init="controller.getAllProjects(@businessId)">
         <!-- New Project Modal -->
         <data-new-project-modal data-projects="controller.projects" data-business-id=@businessId></data-new-project-modal>
-
-        <div class="row text-center" data-ng-show="controller.isLoaded == false">
-            <div class="col-md-12 ml-auto mr-auto mt-auto mb-auto">
-@*                <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>*@
-                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-                <div class="text-default text-center text-capitalize">Loading Projects</div>
-            </div>
-        </div>
 
         <!-- Old card grid hidden; new vendor-style table layout below -->
 
@@ -66,4 +66,27 @@
         </div>
     </div>
 </div>
+
+<style>
+    #projects-page-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f4f3ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+    }
+    
+    #projects-page-loader .loader-text {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #666;
+        text-transform: capitalize;
+    }
+</style>
 }

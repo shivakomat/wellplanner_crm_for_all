@@ -2,8 +2,16 @@
 
 @projectMain("Project Tasks","tasks", "Project Tasks", projectId, businessId) {
 
+    <!-- Project Tasks Page Loader Overlay -->
+    <div id="project-tasks-loader" data-ng-show="controller.isLoaded == false">
+        <div class="lds-roller">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="loader-text">Loading Tasks</div>
+    </div>
+
     <!-- Main Content -->
-    <div class="content" data-ng-controller="tasksController as controller" data-ng-init="controller.getAllTasks(@projectId, @businessId)">
+    <div class="content" data-ng-controller="tasksController as controller" data-ng-init="controller.getAllTasks(@projectId, @businessId)" data-ng-show="controller.isLoaded">
 
             <!-- New List Modal -->
         <data-new-task-list-modal data-all-tasks="controller.tasks" data-project-id=@projectId data-business-id=@businessId></data-new-task-list-modal>
@@ -108,5 +116,28 @@
             </div>
         </div>
     </div>
+
+<style>
+    #project-tasks-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f4f3ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+    }
+    
+    #project-tasks-loader .loader-text {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #666;
+        text-transform: capitalize;
+    }
+</style>
 
 }
