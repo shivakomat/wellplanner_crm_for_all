@@ -16,9 +16,8 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   }
 
   def welcome = Action {
-    // Redirect("https://well-planner-248f4a7d862e.herokuapp.com/assets/rubik-presentation-site/well-planner.html")
-    // Redirect("https://localhost:9000/assets/rubik-presentation-site/well-planner.html")
-    Redirect("https://simple-crm-5528099374a3.herokuapp.com/assets/rubik-presentation-site/well-planner.html")
+    // Serve the HTML file directly instead of redirecting
+    Redirect("/assets/rubik-presentation-site/well-planner.html")
   }
 
   def profile = Action {
