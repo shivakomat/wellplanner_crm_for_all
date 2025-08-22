@@ -53,7 +53,7 @@ class DatabaseInitializer @Inject()(dbApi: DBApi, authService: AuthService) {
     Try {
       SQL("""
         CREATE TABLE IF NOT EXISTS users (
-          id INTEGER AUTO_INCREMENT PRIMARY KEY,
+          id SERIAL PRIMARY KEY,
           user_auth_0_id VARCHAR(100) DEFAULT '',
           logged_in BOOLEAN DEFAULT false,
           username VARCHAR(50) UNIQUE NOT NULL,
